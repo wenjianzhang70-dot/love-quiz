@@ -54,7 +54,7 @@ function result(){
    '<div class="sec s2"><h4>贰 · 恋爱信号灯 <small>娱乐向，不是预言</small></h4><div class="row">'+ICON(sig.icon,t,44)+'<div><div class="big">'+sig.name+'</div><p>'+sig.text+'</p></div></div>'+li('bulb',tip,'fun')+'</div>'+
    '<div class="sec s3"><h4>叁 · 恋爱后的你</h4><p>'+best.why+'</p><p class="diff">'+best.diff+'</p>'+best.fun.map(f=>li('spark',f,'fun')).join('')+(basis?'<div class="basis">'+basis+'</div>':'')+'</div>'+
    '<div class="hook">@你的闺蜜，看她先脱单还是你先</div>'+
-   '<div class="foot">'+(mode==='serious'?'本测试参考常见恋爱沟通与依恋说法，仅供娱乐，不构成心理诊断':'纯属娱乐，请勿当真 · 但可以截图')+'</div>';
+   '<div class="foot">仅供娱乐，不是心理诊断或感情预测。答题在本地完成，不收集个人信息。<br>角色匹配只是有趣类比，请勿当真。</div>';
   const other=mode==='serious'?'funny':'serious';
   $('#other').innerHTML='换「'+QUIZ[other].name+'」再测一次';
   $('#other').onclick=()=>start(other);
@@ -73,5 +73,9 @@ $('#save').onclick=async()=>{
   const a=document.createElement('a');a.href=url;a.download='我的恋爱测试结果.png';
   if(!/MicroMessenger|xhs|discover/i.test(navigator.userAgent))a.click();
 };
+const lt=$('#legalToggle'),lp=$('#legalPanel'),lc=$('#legalClose');
+function openLegal(on){if(!lp)return;lp.classList.toggle('hide',!on);lp.hidden=!on;if(lt)lt.setAttribute('aria-expanded',on?'true':'false')}
+if(lt)lt.onclick=()=>openLegal(lp.hidden);
+if(lc)lc.onclick=()=>openLegal(false);
 window.__start=start;window.__pick=pick;
 })();

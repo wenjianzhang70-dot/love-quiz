@@ -60,3 +60,16 @@
 .vg .card .you{background:none;color:#fdf4d8;transform:none}
 .sec .row .ic{width:48px;height:48px}
 .t-funny .btn.main{-webkit-text-stroke:0;text-shadow:2px 2px 0 #111}
+
+/* 免责与隐私 */
+.legal-toggle{display:block;margin:16px auto 0;background:none;border:0;font:inherit;font-size:13px;color:#a5808e;cursor:pointer;text-decoration:underline wavy #ffb3c6;text-underline-offset:5px}
+.legal-panel{text-align:left;margin:14px 0 0;padding:14px 14px 10px;background:#fffdf8;border:1.5px solid #cbbfae;border-radius:12px;font-size:13px;line-height:1.7;color:#5a4a52}
+.legal-panel.hide{display:none}
+.legal-panel h3{font-family:WenKai,serif;font-size:15px;font-weight:700;margin:8px 0 4px;color:#4b4a46}
+.legal-panel h3:first-child{margin-top:0}
+.legal-panel p{margin:0 0 6px}
+.t-funny .legal-toggle,.t-funny .legal-panel{ /* start page default */ }
+.vg .legal-toggle{color:#ffd54a;text-decoration-color:#e2b33c}
+.vg .legal-panel{background:rgba(253,244,216,.95);border-color:#e2b33c;color:#1d2f6f}
+.vg .legal-panel h3{color:#1d2f6f}
+.card .foot{line-height:1.6}
