@@ -3,23 +3,42 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>恋爱小测验 · 你会怎么谈恋爱</title>
 <meta name="description" content="测测你会不会恋爱、什么时候恋爱、恋爱后像哪个角色">
+<link rel="preload" href="fonts/kuaile-sub.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/wenkai-sub.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head><body>
+<!-- 自绘涂鸦 SVG 符号 -->
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="d-heart" viewBox="0 0 40 40"><path d="M20 34 C6 24 3 14 9 9 C14 5 19 8 20 13 C22 7 28 5 32 9 C38 15 33 25 20 34Z" fill="#ffb3c6" stroke="#5a3d48" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/><path d="M11 13 q2 -3 5 -2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="d-star" viewBox="0 0 40 40"><path d="M20 4 L24 15 L36 15.5 L26.5 23 L30 35 L20 28 L10 35.5 L13.5 23 L4 15 L16 15Z" fill="#ffe27a" stroke="#5a3d48" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+  <symbol id="d-flower" viewBox="0 0 40 40"><g stroke="#5a3d48" stroke-width="2" fill="#c9b8ff"><circle cx="20" cy="9" r="6"/><circle cx="31" cy="17" r="6"/><circle cx="27" cy="30" r="6"/><circle cx="13" cy="30" r="6"/><circle cx="9" cy="17" r="6"/></g><circle cx="20" cy="21" r="5" fill="#ffe27a" stroke="#5a3d48" stroke-width="2"/></symbol>
+  <symbol id="d-squiggle" viewBox="0 0 120 20"><path d="M3 12 C13 2 20 18 30 9 S47 3 55 11 S72 18 80 9 S98 4 117 11" fill="none" stroke="#ff8fab" stroke-width="3" stroke-linecap="round"/></symbol>
+  <symbol id="d-arrow" viewBox="0 0 60 40"><path d="M4 30 C18 10 36 8 52 14" fill="none" stroke="#5a3d48" stroke-width="2.4" stroke-linecap="round"/><path d="M44 7 L53 14 L43 20" fill="none" stroke="#5a3d48" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="d-spark" viewBox="0 0 30 30"><path d="M15 3 V11 M15 19 V27 M3 15 H11 M19 15 H27" stroke="#ffb35c" stroke-width="2.6" stroke-linecap="round"/></symbol>
+</svg>
 <div id="app">
   <section id="start" class="page show">
-    <div class="deco">💌</div>
-    <h1>恋爱小测验</h1>
-    <p class="sub">会不会恋爱？什么时候恋爱？<br>恋爱后的你，像哪个角色？</p>
-    <svg class="hearts" viewBox="0 0 200 60" aria-hidden="true"><g fill="#ff9eb5"><path d="M30 50 C5 30 15 10 30 22 C45 10 55 30 30 50Z"/><path d="M100 45 C80 28 88 12 100 22 C112 12 120 28 100 45Z" fill="#ffc7d6"/><path d="M170 50 C145 30 155 10 170 22 C185 10 195 30 170 50Z"/></g></svg>
-    <p class="pick">选一个模式开始吧</p>
-    <button class="mode serious" data-mode="serious"><b>🔍 认真分析</b><span>真实场景 · 尽量严谨</span></button>
-    <button class="mode funny" data-mode="funny"><b>🤪 搞怪测一测</b><span>脑洞题目 · 快乐至上</span></button>
+    <svg class="dd" style="top:6px;left:8px;width:34px;transform:rotate(-14deg)"><use href="#d-star"/></svg>
+    <svg class="dd" style="top:40px;right:14px;width:38px"><use href="#d-flower"/></svg>
+    <svg class="dd" style="top:190px;left:2px;width:26px"><use href="#d-spark"/></svg>
+    <div class="envelope">
+      <svg viewBox="0 0 120 90" width="120"><rect x="6" y="14" width="108" height="70" rx="8" fill="#fff7e8" stroke="#5a3d48" stroke-width="2.6"/><path d="M8 18 L60 56 L112 18" fill="none" stroke="#5a3d48" stroke-width="2.6" stroke-linejoin="round"/><path d="M60 52 C48 42 47 32 54 29 C58 27 60 30 60 33 C61 29 65 27 69 30 C75 35 70 44 60 52Z" fill="#ff8fab" stroke="#5a3d48" stroke-width="2"/></svg>
+    </div>
+    <h1><span class="hl">恋爱</span>小测验</h1>
+    <svg class="sq"><use href="#d-squiggle"/></svg>
+    <p class="sub">会不会恋爱？什么时候恋爱？<br>恋爱后的你，像哪个<span class="hl-y">角色</span>？</p>
+    <p class="pick">挑一本小本本开始吧 <svg class="arr"><use href="#d-arrow"/></svg></p>
+    <button class="mode serious" data-mode="serious"><span class="tape"></span><b>🔍 认真分析</b><small>真实场景 · 尽量严谨</small></button>
+    <button class="mode funny" data-mode="funny"><span class="tape"></span><b>🤪 搞怪测一测</b><small>脑洞题目 · 快乐至上</small></button>
     <p class="tiny">共 10 题 · 约 2 分钟 · 结果仅供娱乐</p>
   </section>
   <section id="quiz" class="page">
-    <div class="top"><span id="modeTag"></span><span id="count"></span></div>
-    <div class="bar"><i id="barIn"></i></div>
-    <div class="qcard"><div id="qdim" class="qdim"></div><h2 id="qtext"></h2><div id="opts"></div></div>
+    <div class="top"><span id="modeTag" class="chip"></span><span id="count" class="count"></span></div>
+    <div class="track"><i id="barIn"></i><span id="pen" class="pen">✏️</span></div>
+    <div class="qcard" id="qcard">
+      <svg class="dd" style="top:-14px;right:-6px;width:36px;transform:rotate(12deg)"><use href="#d-heart"/></svg>
+      <div id="qdim" class="qdim"></div><h2 id="qtext"></h2><div id="opts"></div>
+    </div>
     <button id="back" class="link">← 上一题</button>
   </section>
   <section id="result" class="page">
@@ -27,9 +46,13 @@
     <div class="actions">
       <button id="save" class="btn main">📸 保存结果图</button>
       <button id="other" class="btn"></button>
-      <button id="again" class="link">重新测一次</button>
+      <button id="again" class="link">↻ 重新测一次</button>
     </div>
-    <div id="preview" class="preview hide"><p>长按图片保存 👇</p><img id="previewImg" alt="结果图"><button class="link" id="closePrev">关闭</button></div>
+    <div id="preview" class="preview hide">
+      <div class="pv-tip">长按图片保存到相册 <svg class="arr down"><use href="#d-arrow"/></svg></div>
+      <div class="polaroid"><img id="previewImg" alt="结果图"></div>
+      <button class="btn close" id="closePrev">好啦 ✕</button>
+    </div>
   </section>
 </div>
 <script src="vendor/html2canvas.min.js"></script>
