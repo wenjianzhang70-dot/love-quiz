@@ -1,0 +1,62 @@
+/* v4 艺术化：原创 SVG + 字体造型 + 统一节奏 */
+:root{--r1:8px;--gap:14px}
+.ic{display:inline-block;vertical-align:middle;flex:none}
+.dd{display:block}.dd .ic{width:100%;height:auto}
+.card:before{display:none}
+/* 开始页 */
+.envelope{margin-top:6px}
+.title{margin:6px 0 10px;line-height:1.1}
+.title .t-a{font-family:WenKai,serif;font-weight:700;font-size:44px;color:#4b4a46;letter-spacing:4px;padding:0 6px;
+  background:radial-gradient(ellipse 60% 42% at 50% 62%,rgba(201,139,139,.42),rgba(201,139,139,0) 70%),radial-gradient(ellipse 40% 30% at 30% 70%,rgba(217,178,111,.35),rgba(217,178,111,0) 70%)}
+.title .t-b{font-family:KuaiLe,sans-serif;font-size:44px;color:#fff;-webkit-text-stroke:2px #111;text-shadow:3px 3px 0 #ff5fa8,5px 5px 0 #111;margin-left:4px;display:inline-block;transform:rotate(-3deg)}
+.pick{margin:18px 0 0}
+.mode{display:flex!important;align-items:center;gap:14px;text-align:left;padding:16px 18px!important}
+.mode .mt{flex:1}.mode b{font-size:24px!important}
+.mode.serious b{font-family:WenKai,serif}
+.mode.funny b{font-family:KuaiLe,sans-serif}
+.theme-link{display:inline-flex;align-items:center;gap:6px}
+/* 答题页 */
+.chip{display:inline-flex;align-items:center;gap:6px}
+.pen{top:-26px!important;transform:translateX(-8px)!important;font-size:0}
+.qdeco{top:-16px;right:-8px;width:36px;transform:rotate(12deg)}
+.opt span{flex:1}
+/* 结果卡 */
+.portrait{margin:10px auto 2px;width:132px;height:132px}
+.you{font-size:14px;letter-spacing:2px;margin-top:4px;opacity:.75}
+.cname{margin:2px 0 4px;line-height:1.2}
+.row{display:flex;gap:12px;align-items:center}
+.row .big{margin-top:0}
+.li{display:flex;gap:8px;align-items:flex-start;margin-top:6px}
+.li .ic{margin-top:3px}
+.sec h4 small{font-size:11px;opacity:.75}
+.diff{opacity:.85;font-size:14px!important}
+.badge{display:inline-flex!important;align-items:center;gap:5px}
+.btn{display:flex!important;align-items:center;justify-content:center;gap:8px}
+.preview .pv-tip{font-size:18px}
+/* —— 认真：水墨+水彩字 —— */
+.t-serious .cname{font-family:WenKai,serif;font-weight:700;font-size:36px;letter-spacing:8px;color:#4b4a46;display:inline-block;padding:0 10px;
+  background:radial-gradient(ellipse 55% 40% at 50% 65%,rgba(201,139,139,.45),rgba(201,139,139,0) 72%),radial-gradient(ellipse 35% 30% at 78% 40%,rgba(143,168,138,.35),rgba(143,168,138,0) 70%)}
+.t-serious .sec h4{letter-spacing:2px}
+.t-serious .big{font-family:WenKai,serif;font-weight:700;color:#4b4a46}
+.t-serious h2{font-family:WenKai,serif;font-weight:700;font-size:22px}
+.t-serious .chip span,.t-serious .count{font-weight:700}
+/* —— 搞怪：粗描边叠字 —— */
+.t-funny .cname{font-family:KuaiLe,sans-serif;font-size:44px;color:#fff;-webkit-text-stroke:2.2px #111;text-shadow:3px 3px 0 #ff5fa8,6px 6px 0 #111;transform:rotate(-2deg);display:inline-block}
+.t-funny .you{font-family:KuaiLe,sans-serif;opacity:1;background:#111;color:#ffe14d;display:inline-block;padding:1px 10px;border-radius:8px;transform:rotate(2deg)}
+.t-funny .big{font-family:KuaiLe,sans-serif;font-size:23px}
+.t-funny .hook{font-family:KuaiLe,sans-serif}
+/* —— 梵高：金色描边叠影字 —— */
+.vg .title .t-a,.vg .title .t-b{font-family:KuaiLe,sans-serif;font-weight:normal;background:none;color:#ffd54a;-webkit-text-stroke:1.4px #13235a;text-shadow:2px 2px 0 #e8873a,4px 4px 0 #13235a,0 0 22px rgba(255,213,74,.55)}
+.vg .card .head{background:rgba(19,35,90,.92)!important;border:2px solid #e2b33c;color:#fdf4d8}
+.vg .card .badge{background:#fdf4d8;color:#13235a;border:1.5px solid #e2b33c}
+.vg .cname{font-family:KuaiLe,sans-serif;font-size:42px;color:#ffd54a!important;-webkit-text-stroke:1.4px #13235a!important;text-shadow:2px 2px 0 #e8873a,4px 4px 0 #0b1640,0 0 18px rgba(255,213,74,.5)!important}
+.vg .card .stage{color:#fdf4d8!important}.vg .you{color:#fdf4d8}
+.vg .mode{gap:14px}
+.vg .pick{color:#fdf4d8}
+.card .you{display:table;margin:6px auto 0}
+.card h3.cname{display:table;margin:4px auto 6px}
+.t-funny .card h3.cname{font-size:44px;color:#fff;-webkit-text-stroke:2.2px #111;text-shadow:3px 3px 0 #ff5fa8,6px 6px 0 #111}
+.vg .card h3.cname{color:#ffd54a!important;-webkit-text-stroke:1.4px #13235a!important;text-shadow:2px 2px 0 #e8873a,4px 4px 0 #0b1640!important;font-size:42px}
+.vg .card .you{background:none;color:#fdf4d8;transform:none}
+.sec .row .ic{width:48px;height:48px}
+.t-funny .btn.main{-webkit-text-stroke:0;text-shadow:2px 2px 0 #111}
