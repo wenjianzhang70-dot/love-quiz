@@ -1,0 +1,53 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"PingFang SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif;background:linear-gradient(160deg,#fff0f4,#fdf6ec 60%,#f0f4ff);color:#5a4a52;min-height:100vh}
+#app{max-width:440px;margin:0 auto;padding:24px 18px 40px}
+.page{display:none}.page.show{display:block;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+#start{text-align:center;padding-top:30px}
+.deco{font-size:64px;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-6deg)}}
+h1{font-size:32px;color:#e86a8c;margin:10px 0;letter-spacing:2px}
+.sub{line-height:1.8;font-size:16px}
+.hearts{width:180px;margin:14px auto;display:block}
+.pick{margin:10px 0 14px;color:#b08a98}
+.mode{display:block;width:100%;border:0;border-radius:22px;padding:18px;margin:12px 0;font-size:19px;color:#fff;box-shadow:0 6px 16px rgba(232,106,140,.25);cursor:pointer}
+.mode span{display:block;font-size:13px;opacity:.9;margin-top:4px}
+.mode.serious{background:linear-gradient(135deg,#a3b8ff,#c3a6ff)}
+.mode.funny{background:linear-gradient(135deg,#ff9eb5,#ffc58f)}
+.tiny{font-size:12px;color:#b8a2ac;margin-top:16px}
+.top{display:flex;justify-content:space-between;font-size:14px;color:#c07890;margin-bottom:8px}
+.bar{height:10px;background:#fde1e8;border-radius:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#ff9eb5,#ffc58f);transition:width .3s;border-radius:10px}
+.qcard{background:#fff;border-radius:26px;padding:24px 18px;margin-top:22px;box-shadow:0 8px 24px rgba(220,150,170,.18)}
+.qdim{display:inline-block;font-size:12px;background:#f0ecff;color:#8a78d0;padding:3px 10px;border-radius:10px;margin-bottom:10px}
+.qdim:empty{display:none}
+h2{font-size:20px;line-height:1.5;margin-bottom:18px;color:#4a3a42}
+.opt{display:block;width:100%;text-align:left;background:#fff7f9;border:2px solid #fde1e8;border-radius:16px;padding:14px;margin:10px 0;font-size:16px;color:#5a4a52;cursor:pointer;transition:.15s}
+.opt:active,.opt.on{background:#ffe3ea;border-color:#ff9eb5}
+.opt b{color:#e86a8c;margin-right:8px}
+.link{background:none;border:0;color:#b08a98;font-size:14px;margin-top:16px;cursor:pointer;display:block;margin-left:auto;margin-right:auto}
+.card{background:#fffdfb;border-radius:28px;padding:22px 18px;box-shadow:0 10px 30px rgba(220,150,170,.22);border:3px solid #ffe0e8;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;top:-40px;right:-40px;width:120px;height:120px;border-radius:50%;background:#ffe9ef}
+.card .head{text-align:center;position:relative}
+.card .badge{display:inline-block;font-size:12px;padding:3px 12px;border-radius:12px;background:#fff0f4;color:#e86a8c}
+.card .avatar{font-size:56px;margin:8px 0 2px}
+.card h3{font-size:22px;color:#e86a8c}
+.card .stage{font-size:13px;color:#a08890;margin-top:4px;line-height:1.5}
+.sec{margin-top:14px;background:#fff;border-radius:18px;padding:12px 14px;border:1.5px dashed #fbd3de}
+.sec h4{font-size:14px;color:#c07890;margin-bottom:6px}
+.sec .big{font-size:17px;font-weight:700;color:#4a3a42;margin-bottom:4px}
+.sec p{font-size:14px;line-height:1.7}
+.sec .fun{color:#e8806a}
+.basis{font-size:12px;color:#8a78d0;margin-top:6px;line-height:1.6}
+.dims{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin-top:6px;font-size:12px}
+.dims div span{display:block;height:6px;background:#fde1e8;border-radius:4px;margin-top:3px}
+.dims div span i{display:block;height:100%;background:#ff9eb5;border-radius:4px}
+.hook{text-align:center;margin-top:14px;font-size:15px;font-weight:700;color:#e86a8c}
+.foot{text-align:center;font-size:11px;color:#c0aab4;margin-top:8px}
+.actions{margin-top:18px}
+.btn{display:block;width:100%;border:2px solid #ff9eb5;background:#fff;color:#e86a8c;border-radius:20px;padding:13px;font-size:16px;margin:10px 0;cursor:pointer}
+.btn.main{background:linear-gradient(135deg,#ff9eb5,#ffc58f);color:#fff;border:0}
+.preview{position:fixed;inset:0;background:rgba(80,50,60,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;z-index:9}
+.preview.hide{display:none}.preview p{color:#fff;margin-bottom:10px}
+.preview img{max-width:100%;max-height:78vh;border-radius:16px}
+.preview .link{color:#fff}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>恋爱小测验 · 你会怎么谈恋爱</title>
+<meta name="description" content="测测你会不会恋爱、什么时候恋爱、恋爱后像哪个角色">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div id="app">
+  <section id="start" class="page show">
+    <div class="deco">💌</div>
+    <h1>恋爱小测验</h1>
+    <p class="sub">会不会恋爱？什么时候恋爱？<br>恋爱后的你，像哪个角色？</p>
+    <svg class="hearts" viewBox="0 0 200 60" aria-hidden="true"><g fill="#ff9eb5"><path d="M30 50 C5 30 15 10 30 22 C45 10 55 30 30 50Z"/><path d="M100 45 C80 28 88 12 100 22 C112 12 120 28 100 45Z" fill="#ffc7d6"/><path d="M170 50 C145 30 155 10 170 22 C185 10 195 30 170 50Z"/></g></svg>
+    <p class="pick">选一个模式开始吧</p>
+    <button class="mode serious" data-mode="serious"><b>🔍 认真分析</b><span>真实场景 · 尽量严谨</span></button>
+    <button class="mode funny" data-mode="funny"><b>🤪 搞怪测一测</b><span>脑洞题目 · 快乐至上</span></button>
+    <p class="tiny">共 10 题 · 约 2 分钟 · 结果仅供娱乐</p>
+  </section>
+  <section id="quiz" class="page">
+    <div class="top"><span id="modeTag"></span><span id="count"></span></div>
+    <div class="bar"><i id="barIn"></i></div>
+    <div class="qcard"><div id="qdim" class="qdim"></div><h2 id="qtext"></h2><div id="opts"></div></div>
+    <button id="back" class="link">← 上一题</button>
+  </section>
+  <section id="result" class="page">
+    <div id="card" class="card"></div>
+    <div class="actions">
+      <button id="save" class="btn main">📸 保存结果图</button>
+      <button id="other" class="btn"></button>
+      <button id="again" class="link">重新测一次</button>
+    </div>
+    <div id="preview" class="preview hide"><p>长按图片保存 👇</p><img id="previewImg" alt="结果图"><button class="link" id="closePrev">关闭</button></div>
+  </section>
+</div>
+<script src="vendor/html2canvas.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body></html>
