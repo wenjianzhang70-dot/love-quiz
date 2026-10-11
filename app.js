@@ -69,7 +69,7 @@ function result(){
   show('result');
 }
 function loadH2C(){return window.html2canvas?Promise.resolve():new Promise((ok,no)=>{const s=document.createElement('script');s.src='vendor/html2canvas.min.js';s.onload=ok;s.onerror=no;document.head.appendChild(s)})}
-document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>start(b.dataset.mode));
+document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>{b.classList.remove('pop');void b.offsetWidth;b.classList.add('pop');try{navigator.vibrate&&navigator.vibrate(12)}catch(e){};setTimeout(()=>start(b.dataset.mode),180)});
 $('#back').onclick=()=>{if(idx>0){idx--;render()}};
 $('#again').onclick=()=>{mode=null;theme();show('start')};
 $('#closePrev').onclick=()=>$('#preview').classList.add('hide');

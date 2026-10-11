@@ -1,0 +1,92 @@
+/* ===== 毛绒羊毛毡皮肤（覆盖层，最后加载） ===== */
+:root{--peach:#ffd9cc;--cream:#fff8ef;--mint:#d6efe3;--lav:#e6defa;--pinkF:#ffd6e3;--stitch:rgba(160,120,130,.45);
+--felt-sh:0 2px 0 rgba(255,255,255,.7) inset,0 8px 18px rgba(180,140,150,.22),0 3px 0 #f3d0da;
+--felt-sh-press:0 1px 0 rgba(255,255,255,.5) inset,0 3px 8px rgba(180,140,150,.18),0 1px 0 #f3d0da;
+--spring:cubic-bezier(.34,1.56,.64,1)}
+body{background-color:var(--cream)!important;
+ background-image:radial-gradient(ellipse 60% 40% at 10% 5%,#ffe3d8 0,transparent 60%),radial-gradient(ellipse 50% 40% at 95% 30%,#e3f4ea 0,transparent 60%),radial-gradient(ellipse 60% 40% at 50% 100%,#ece4fb 0,transparent 60%),
+ url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Ccircle cx='1' cy='1' r='.6' fill='%23e8d8cc'/%3E%3C/svg%3E")!important}
+body:before{display:none!important}
+/* 缝线 */
+.felt-stitch,.mode,.qcard,.card,.sec,.btn,.track,.chip,.legal-panel{outline:2px dashed var(--stitch);outline-offset:-7px}
+/* 标题：羊毛字 */
+.title .t-a,.title .t-b{font-family:KuaiLe,sans-serif!important;font-weight:normal!important;-webkit-text-stroke:0!important;background:none!important;transform:none!important;
+ color:#e98aa3!important;text-shadow:0 2px 0 #fff,0 4px 0 #f6c3d0,0 8px 14px rgba(200,140,160,.35)!important}
+.title .t-b{color:#8cc6ad!important;text-shadow:0 2px 0 #fff,0 4px 0 #cbe8da,0 8px 14px rgba(120,170,150,.35)!important}
+.pick,.tiny,.sub{color:#9a7f88}
+/* 两扇毛毡门 */
+.mode{border:0!important;border-radius:34px 34px 22px 22px!important;transform:none!important;padding:20px 18px!important;color:#5a4a52!important;
+ box-shadow:var(--felt-sh)!important;transition:transform .09s ease-out,box-shadow .09s ease-out!important;position:relative}
+.mode.serious{background:linear-gradient(180deg,#e2f4ea,#cfeadc)!important;box-shadow:0 2px 0 rgba(255,255,255,.7) inset,0 8px 18px rgba(120,170,150,.25),0 4px 0 #b9dcc9!important}
+.mode.funny{background:linear-gradient(180deg,#ffe3ec,#ffd0de)!important;box-shadow:0 2px 0 rgba(255,255,255,.7) inset,0 8px 18px rgba(200,130,150,.25),0 4px 0 #f6bfcf!important}
+.mode b{-webkit-text-stroke:0!important;text-shadow:none!important;color:#5a4a52!important;font-family:KuaiLe,sans-serif!important}
+.mode small{background:none!important;border:0!important;color:#8a7380!important}
+.mode .tape{display:none}
+.mode:after{content:"";position:absolute;right:22px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.5),0 2px 3px rgba(0,0,0,.08)}
+.mode:active{transform:scale(.97) translateY(3px)!important;box-shadow:var(--felt-sh-press)!important}
+.mode.pop{animation:spring .26s var(--spring)}
+@keyframes spring{0%{transform:scale(.97) translateY(3px)}100%{transform:none}}
+/* 进度条 */
+.track{height:16px!important;border:0!important;border-radius:999px!important;background:#fff3ee!important;box-shadow:inset 0 2px 4px rgba(180,140,150,.2),0 2px 0 #fff!important;outline-offset:-4px}
+.track i{border-radius:999px!important;background:linear-gradient(90deg,#ffc9d6,#ffb3c6)!important}
+.pen{top:-10px!important;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff 0 18%,#ff9fbb 20% 100%);box-shadow:0 3px 6px rgba(200,120,150,.35);transform:translateX(-14px)!important}
+.pen .ic{display:none}
+.chip{border:0!important;border-radius:999px!important;background:#fff!important;box-shadow:var(--felt-sh)!important;transform:none!important;color:#6a5560!important;outline-offset:-5px}
+.count{-webkit-text-stroke:0!important;text-shadow:0 2px 0 #fff!important;color:#c98ba0!important}
+/* 题卡 / 结果卡 */
+.qcard,.card{border:0!important;border-radius:30px!important;transform:none!important;background:#fffaf5!important;box-shadow:0 2px 0 rgba(255,255,255,.8) inset,0 14px 30px rgba(180,140,150,.2),0 5px 0 #f3d8df!important}
+.qcard:before,.card:after{display:none!important}
+.qdim{border:0!important;background:var(--lav)!important;color:#7a6aa8!important;border-radius:999px!important}
+h2{-webkit-text-stroke:0!important;text-shadow:none!important}
+.card .head{border:0!important;border-radius:24px!important}
+.card .badge{border:0!important;background:#fff!important;box-shadow:var(--felt-sh)!important;color:#7a6070!important}
+.avatar,.portrait .ic{border-radius:50%}
+.card h3.cname{-webkit-text-stroke:0!important;transform:none!important;color:#e07a98!important;text-shadow:0 2px 0 #fff,0 4px 0 #f6c3d0!important;background:none!important}
+.you{background:none!important;color:#9a7f88!important;transform:none!important}
+.sec{border:0!important;border-radius:24px!important;background:#fff!important;box-shadow:0 2px 0 rgba(255,255,255,.8) inset,0 6px 14px rgba(180,140,150,.15),0 3px 0 #f6e0e6!important;outline-offset:-6px}
+.sec h4{border:0!important;border-radius:999px!important;transform:rotate(-1deg)!important;background:var(--peach)!important;color:#6a4a52!important;box-shadow:0 3px 6px rgba(200,140,150,.25)!important}
+.sec.s2 h4{background:var(--mint)!important}.sec.s3 h4{background:var(--lav)!important}
+.dims span{border:0!important;background:#fff0f3!important;border-radius:999px!important}.dims span i{background:#ffb3c6!important;border-radius:999px}
+.hook{background:var(--pinkF)!important;color:#b0506e!important;border-radius:999px!important;padding:10px!important;transform:none!important;font-family:KuaiLe,sans-serif!important}
+.fp{border:0!important;background:#fff!important;box-shadow:var(--felt-sh)!important;color:#c06080!important;font-family:KuaiLe,sans-serif!important}
+/* 主按钮 */
+.btn{border:0!important;border-radius:999px!important;transform:none!important;background:#fff!important;color:#6a5560!important;-webkit-text-stroke:0!important;text-shadow:none!important;
+ box-shadow:var(--felt-sh)!important;transition:transform .09s ease-out,box-shadow .09s!important;outline-offset:-6px}
+.btn.main{background:linear-gradient(180deg,#ffd9cc,#ffc4b4)!important;color:#7a3f4c!important}
+.btn:active{transform:scale(.97) translateY(3px)!important;box-shadow:var(--felt-sh-press)!important}
+.polaroid{border:0!important;border-radius:24px!important;box-shadow:0 14px 30px rgba(180,140,150,.25)!important;transform:none!important}
+.preview{background:var(--cream)!important}
+.legal-panel{border:0!important;border-radius:22px!important;box-shadow:var(--felt-sh)!important}
+/* —— 认真：薄荷/奶油 —— */
+body.t-serious{background-color:#f7f6ef!important}
+.t-serious .qcard,.t-serious .card{background:#fffdf8!important;box-shadow:0 2px 0 rgba(255,255,255,.8) inset,0 14px 30px rgba(130,150,130,.18),0 5px 0 #dfe9df!important}
+.t-serious .track i{background:linear-gradient(90deg,#cfe6d8,#a9cdb8)!important}
+.t-serious .pen{background:radial-gradient(circle at 35% 35%,#fff 0 18%,#9cc9b0 20% 100%)}
+.t-serious .card h3.cname{color:#6f9a84!important;text-shadow:0 2px 0 #fff,0 4px 0 #d3e8dc!important}
+.t-serious .btn.main{background:linear-gradient(180deg,#d9efe3,#bfe0cd)!important;color:#3f5e4d!important}
+.t-serious .hook{background:#e3f1e8!important;color:#5f7a5a!important}
+.t-serious .sec h4{background:#e3f1e8!important}
+/* —— 搞怪：桃粉/柠檬/薄荷，去黑描边 —— */
+body.t-funny{background-color:#fff6ec!important;background-image:radial-gradient(ellipse 60% 40% at 10% 5%,#ffe0ea 0,transparent 60%),radial-gradient(ellipse 50% 40% at 95% 40%,#fff4c8 0,transparent 60%),radial-gradient(ellipse 60% 40% at 40% 100%,#d9f4ee 0,transparent 60%)!important}
+.t-funny .card{background:#fffaf2!important}
+.t-funny .card h3.cname{color:#ff7aa6!important;font-size:42px!important}
+.t-funny .sec h4{background:#fff1b8!important}.t-funny .sec.s2 h4{background:#d4f2f6!important}.t-funny .sec.s3 h4{background:#ffd6e3!important;color:#a04a68!important}
+.t-funny .btn.main{background:linear-gradient(180deg,#ffd6e3,#ffbfd2)!important;color:#8a2f50!important}
+.t-funny .you{color:#c06080!important}
+/* —— 梵高：保留蓝金，但软毛毡形 —— */
+.vg .mode.serious,.vg .mode.funny{background:linear-gradient(180deg,#fdf4d8,#f5e3b0)!important;box-shadow:0 2px 0 rgba(255,255,255,.6) inset,0 8px 18px rgba(10,20,60,.35),0 4px 0 #d9b85a!important}
+.vg .title .t-a,.vg .title .t-b{color:#ffd54a!important;text-shadow:0 2px 0 #fff3c0,0 4px 0 #c99a2a,0 8px 16px rgba(0,0,30,.5)!important}
+.vg .pick,.vg .tiny,.vg .sub{color:#fdf4d8!important}
+.vg .qcard,.vg .card{background:#fdf6e0!important;box-shadow:0 2px 0 rgba(255,255,255,.6) inset,0 14px 30px rgba(10,20,60,.35),0 5px 0 #d9b85a!important}
+.vg .card{background:#fdf6e0 url(img/vg-bg.jpg) center/cover!important}
+.vg .card .head{background:rgba(19,35,90,.9)!important}
+.vg .card h3.cname{color:#ffd54a!important;text-shadow:0 2px 0 #13235a,0 4px 0 #0b1640!important}
+.vg .you{color:#fdf4d8!important}
+.vg .sec{background:rgba(253,246,224,.96)!important;box-shadow:0 6px 14px rgba(10,20,60,.25),0 3px 0 #d9b85a!important}
+.vg .sec h4{background:#ffd54a!important;color:#1d2f6f!important}
+.vg .track{background:#13235a!important}.vg .track i{background:linear-gradient(90deg,#ffd54a,#f2a93b)!important}
+.vg .pen{background:radial-gradient(circle at 35% 35%,#fff 0 18%,#ffd54a 20% 100%)}
+.vg .btn{background:#fdf4d8!important;color:#1d2f6f!important}.vg .btn.main{background:linear-gradient(180deg,#ffe27a,#ffd54a)!important}
+.vg .hook{background:#1d2f6f!important;color:#ffd54a!important}
+.vg .chip{background:#ffd54a!important;color:#13235a!important}
+.vg .preview{background:#13235a url(img/vg-bg.jpg) center/cover!important}
