@@ -1,6 +1,6 @@
 (function(){
 const $=s=>document.querySelector(s);
-let mode,idx,answers;
+let mode,idx,answers,pet=null;const DEMO3D=/demo3d=1/.test(location.search);
 const VG=/theme=vangogh/.test(location.search);
 const T=()=>VG?'v':(mode==='funny'?'f':'s');
 function paint(root){(root||document).querySelectorAll('[data-ic]').forEach(el=>{const t=el.dataset.t&&!VG?el.dataset.t:(VG?'v':(el.dataset.t||'s'));el.innerHTML=ICON(el.dataset.ic,t,+(el.dataset.size||el.offsetWidth||40))})}
@@ -38,6 +38,7 @@ function result(){
   const sigKey=r.I>=0.6?'near':(r.O>=0.5&&r.C>=0.5?'chance':'slow');
   const sig=SIGNAL[sigKey],tip=sig.tips[Math.floor(Math.random()*sig.tips.length)];
   let best,bd=1e9;Q.chars.forEach(c=>{let d=c.bias||0;for(const k in c.p)d+=Math.pow(c.p[k]/2-r[k],2);if(d<bd){bd=d;best=c}});
+  if(DEMO3D&&mode==='serious')best=Q.chars.find(c=>c.motif==='lantern');
   const pct=k=>Math.round(r[k]*100);
   const top=(k,hi)=>src[k].filter(x=>hi?x.v>=1.5:x.v<=0.5).map(x=>'第'+(x.qi+1)+'题').slice(0,3).join('、');
   let basis='';
@@ -53,6 +54,7 @@ function result(){
    '<div class="sec s1"><h4>壹 · 会不会恋爱</h4><div class="row">'+ICON(status.icon,t,44)+'<div><div class="big">'+status.name+'</div><p>'+status.text+'</p></div></div>'+(mode==='serious'?'<div class="dims">'+dims+'</div>':'')+'</div>'+
    '<div class="sec s2"><h4>贰 · 恋爱信号灯 <small>娱乐向，不是预言</small></h4><div class="row">'+ICON(sig.icon,t,44)+'<div><div class="big">'+sig.name+'</div><p>'+sig.text+'</p></div></div>'+li('bulb',tip,'fun')+'</div>'+
    '<div class="sec s3"><h4>叁 · 恋爱后的你</h4><p>'+best.why+'</p><p class="diff">'+best.diff+'</p>'+best.fun.map(f=>li('spark',f,'fun')).join('')+(basis?'<div class="basis">'+basis+'</div>':'')+'</div>'+
+   (best.motif==='lantern'?'<div class="pet"><div id="petHost" class="pet-host"></div><p class="pet-tip">戳戳小灯笼</p></div>':'')+
    '<div class="hook">@你的闺蜜，看她先脱单还是你先</div>'+
    '<div class="foot">'+(mode==='serious'?'本测试参考常见恋爱沟通与依恋说法，仅供娱乐，不构成心理诊断':'纯属娱乐，请勿当真 · 但可以截图')+'</div>';
   const other=mode==='serious'?'funny':'serious';
@@ -60,7 +62,13 @@ function result(){
   $('#other').onclick=()=>start(other);
   $('#camIc').innerHTML=ICON('camera',t,24);
   show('result');
+  if(pet){pet.destroy();pet=null}
+  const host=$('#petHost');if(host)mountPet3D(host,t,best);
 }
+function webgl(){try{const c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'))}catch(e){return false}}
+function mountPet3D(host,t,best){const fb=()=>{host.innerHTML=ICON(best.motif,t,160,best.bg)};
+  if(!webgl())return fb();
+  import('./vendor/pet3d.min.js').then(m=>{if(!document.body.contains(host))return;pet=m.mountPet(host,t);window.__pet=pet}).catch(fb)}
 function loadH2C(){return window.html2canvas?Promise.resolve():new Promise((ok,no)=>{const s=document.createElement('script');s.src='vendor/html2canvas.min.js';s.onload=ok;s.onerror=no;document.head.appendChild(s)})}
 document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>start(b.dataset.mode));
 $('#back').onclick=()=>{if(idx>0){idx--;render()}};
@@ -68,10 +76,13 @@ $('#again').onclick=()=>{mode=null;theme();show('start')};
 $('#closePrev').onclick=()=>$('#preview').classList.add('hide');
 $('#save').onclick=async()=>{
   try{await loadH2C()}catch(e){alert('请直接截图保存～');return}
-  await document.fonts.ready;const c=await html2canvas($('#card'),{scale:2,backgroundColor:null,useCORS:true});
+  await document.fonts.ready;let still=null;if(pet){still=new Image();still.src=pet.snapshot();still.width=240;still.height=240;pet.canvas.style.display='none';pet.canvas.parentNode.appendChild(still)}
+  const c=await html2canvas($('#card'),{scale:2,backgroundColor:null,useCORS:true});
+  if(still){still.remove();pet.canvas.style.display=''}
   const url=c.toDataURL('image/png');$('#previewImg').src=url;$('#preview').classList.remove('hide');
   const a=document.createElement('a');a.href=url;a.download='我的恋爱测试结果.png';
   if(!/MicroMessenger|xhs|discover/i.test(navigator.userAgent))a.click();
 };
+if(DEMO3D){start('serious');for(let i=0;i<10;i++){answers[i]=0}idx=9;result()}
 window.__start=start;window.__pick=pick;
 })();

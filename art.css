@@ -60,3 +60,8 @@
 .vg .card .you{background:none;color:#fdf4d8;transform:none}
 .sec .row .ic{width:48px;height:48px}
 .t-funny .btn.main{-webkit-text-stroke:0;text-shadow:2px 2px 0 #111}
+.pet{text-align:center;margin-top:14px}
+.pet-host{width:240px;height:240px;margin:0 auto;display:flex;align-items:center;justify-content:center}
+.pet-host canvas{cursor:pointer;-webkit-user-select:none;user-select:none}
+.pet-tip{font-size:13px;opacity:.7;margin-top:-6px}
+.vg .pet-tip{color:#fdf4d8;opacity:1;background:rgba(19,35,90,.85);display:inline-block;padding:2px 12px;border-radius:10px}
