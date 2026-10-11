@@ -1,8 +1,10 @@
 (function(){
 const $=s=>document.querySelector(s);
-let mode,idx,answers;
+let mode,idx,answers;const VG=/theme=vangogh/.test(location.search);
+if(VG){document.body.classList.add('vg');const t=$('#themeLink');t.href='./';t.textContent='🎨 回到手绘版';}
+function theme(m){document.body.className=(m?'t-'+m:'')+(VG?' vg':'')}
 function show(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('show',p.id===id));scrollTo(0,0)}
-function start(m){mode=m;idx=0;answers=[];$('#modeTag').textContent=QUIZ[m].emoji+' '+QUIZ[m].name;render();show('quiz')}
+function start(m){mode=m;theme(m);idx=0;answers=[];$('#modeTag').textContent=QUIZ[m].emoji+' '+QUIZ[m].name;render();show('quiz')}
 function render(){
   const qs=QUIZ[mode].questions,q=qs[idx];
   $('#count').textContent=(idx+1)+' / '+qs.length;
@@ -51,11 +53,11 @@ function result(){
 }
 document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>start(b.dataset.mode));
 $('#back').onclick=()=>{if(idx>0){idx--;render()}};
-$('#again').onclick=()=>show('start');
+$('#again').onclick=()=>{theme();show('start')};
 $('#closePrev').onclick=()=>$('#preview').classList.add('hide');
 $('#save').onclick=async()=>{
   if(!window.html2canvas){alert('请直接截图保存～');return}
-  await document.fonts.ready;const c=await html2canvas($('#card'),{scale:2,backgroundColor:'#fffaf0',useCORS:true});
+  await document.fonts.ready;const c=await html2canvas($('#card'),{scale:2,backgroundColor:null,useCORS:true});
   const url=c.toDataURL('image/png');$('#previewImg').src=url;$('#preview').classList.remove('hide');
   const a=document.createElement('a');a.href=url;a.download='我的恋爱测试结果.png';
   if(!/MicroMessenger|xhs|discover/i.test(navigator.userAgent))a.click();

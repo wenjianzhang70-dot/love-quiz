@@ -1,0 +1,118 @@
+/* ===== 认真分析：水彩手账（安静、可信） ===== */
+.mode.serious{background:#f6f1e7 url(img/wc-bg.jpg) center/cover;border:1.5px solid #8a7a6a;border-radius:6px;box-shadow:0 6px 14px rgba(120,100,80,.18);color:#4b4a46}
+.mode.serious b{font-family:WenKai,serif;font-weight:700;letter-spacing:2px}
+.mode.serious .tape{background:repeating-linear-gradient(45deg,rgba(143,168,138,.75) 0 6px,rgba(170,192,165,.75) 6px 12px)}
+body.t-serious{--ink:#4b4a46;background:#f6f1e7 url(img/wc-bg.jpg) center top/100% auto repeat-y}
+body.t-serious:before{display:none}
+.t-serious .dd{display:none}
+.t-serious .chip{border:1.5px solid #8a7a6a;border-radius:4px;background:repeating-linear-gradient(45deg,#dfe7d8 0 6px,#e9efe3 6px 12px);transform:rotate(-1deg);font-family:WenKai,serif;font-weight:700}
+.t-serious .count{font-family:WenKai,serif;color:#8a7a6a}
+.t-serious .track{border:1.5px solid #8a7a6a;border-radius:8px;height:10px}
+.t-serious .track i{background:linear-gradient(90deg,#b9c9b0,#8fa88a);border-radius:8px}
+.t-serious .pen{content:"";font-size:18px}
+.t-serious .qcard,.t-serious .card{border:1.5px solid #8a7a6a;border-radius:4px;box-shadow:0 8px 22px rgba(120,100,80,.15);background:#fffdf8}
+.t-serious .qcard:before,.t-serious .card:after{content:"";position:absolute;top:-10px;left:50%;width:90px;height:22px;margin-left:-45px;background:rgba(201,139,139,.55);transform:rotate(-3deg)}
+.t-serious .qdim{border:0;background:#eef2ea;color:#5f7a5a}
+.t-serious h2,.t-serious h3,.t-serious .big,.t-serious .hook{font-family:WenKai,serif;font-weight:700}
+.t-serious .opt{transform:none!important;border:1.5px solid #cbbfae;border-radius:4px;box-shadow:none;background:#fffdf8}
+.t-serious .opt b{border:1.5px solid #8a7a6a;font-family:WenKai,serif;background:#f3ede2!important;border-radius:50%}
+.t-serious .opt:active,.t-serious .opt.on{background:#e6eedf;border-color:#8fa88a}
+.t-serious .card{background:#fffdf8 url(img/wc-bg.jpg) center/cover}
+.t-serious .avatar{border:1.5px solid #8a7a6a;box-shadow:none;background:#f1e4e0;border-radius:50%}
+.t-serious .card .badge{border:1px solid #8a7a6a;background:#fffdf8}
+.t-serious .hl{background:linear-gradient(transparent 62%,rgba(201,139,139,.45) 62%)}
+.t-serious .mark{background:linear-gradient(transparent 60%,rgba(143,168,138,.4) 60%)}
+.t-serious .sec{border:1px solid #d8ccb9;border-radius:4px;background:rgba(255,253,248,.92)}
+.t-serious .sec h4{background:#dfe7d8;border:1px solid #8a7a6a;border-radius:2px;font-family:WenKai,serif;font-weight:700;transform:rotate(-1deg)}
+.t-serious .sec.s2 h4{background:#efe1c4}.t-serious .sec.s3 h4{background:#efd6d4}
+.t-serious .fun{color:#a8615f}
+.t-serious .dims span{border:1px solid #8a7a6a}.t-serious .dims span i{background:#8fa88a}
+.t-serious .basis{color:#5f7a5a;border-top-color:#b9c9b0}
+.t-serious .hook{color:#a8615f}
+.t-serious .btn{border:1.5px solid #8a7a6a;border-radius:6px;box-shadow:0 4px 10px rgba(120,100,80,.15);font-family:WenKai,serif;font-weight:700}
+.t-serious .btn.main{background:#8fa88a;color:#fff;transform:none}
+.t-serious .link{text-decoration-color:#b9c9b0}
+.t-serious .preview{background:#f6f1e7}
+.t-serious .polaroid{border:1px solid #cbbfae;box-shadow:0 10px 26px rgba(120,100,80,.2)}
+
+/* ===== 搞怪测一测：孟菲斯贴纸漫画（大声、好玩） ===== */
+.mode.funny{background:#ff5fa8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M6 20l8-8 8 8 8-8' stroke='%23ffe14d' stroke-width='4' fill='none'/%3E%3Ccircle cx='60' cy='18' r='6' fill='%2330d5ea'/%3E%3Cpath d='M48 60l12-14 12 14z' fill='%23b8f04a'/%3E%3Ccircle cx='18' cy='60' r='3' fill='%23fff'/%3E%3C/svg%3E");color:#111;border:3.5px solid #111;box-shadow:6px 6px 0 #111;border-radius:16px}
+.mode.funny b{font-size:26px;color:#fff;-webkit-text-stroke:1px #111;text-shadow:2px 2px 0 #111}
+.mode.funny small{background:#fff;display:inline-block;padding:0 8px;border:2px solid #111;border-radius:8px}
+.mode.funny .tape{background:#30d5ea}
+body.t-funny{--ink:#111;background:#fff3a8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M8 30l9-9 9 9 9-9' stroke='%23ff5fa8' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='92' cy='24' r='8' fill='none' stroke='%2330d5ea' stroke-width='4'/%3E%3Cpath d='M70 96l14-16 14 16z' fill='%23b8f04a' stroke='%23111' stroke-width='2'/%3E%3Ccircle cx='24' cy='92' r='4' fill='%23111'/%3E%3Cpath d='M50 58h14M57 51v14' stroke='%23a17cff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E")}
+body.t-funny:before{display:none}
+.t-funny .chip{border:3px solid #111;background:#30d5ea;border-radius:10px;transform:rotate(-4deg);box-shadow:3px 3px 0 #111}
+.t-funny .count{font-size:28px;-webkit-text-stroke:1px #111;color:#ff5fa8;text-shadow:2px 2px 0 #111}
+.t-funny .track{border:3.5px solid #111;border-radius:12px;height:20px}
+.t-funny .track i{background:repeating-linear-gradient(-45deg,#ff5fa8 0 10px,#ffe14d 10px 20px);border-radius:8px}
+.t-funny .qcard{border:3.5px solid #111;border-radius:20px;box-shadow:8px 8px 0 #111;transform:rotate(-1deg);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Ccircle cx='3' cy='3' r='1.3' fill='%23ffd6ea'/%3E%3C/svg%3E")}
+.t-funny .qcard.flip{animation:boing .45s cubic-bezier(.3,1.8,.5,1)}
+@keyframes boing{from{opacity:0;transform:scale(.6) rotate(-8deg)}to{opacity:1}}
+.t-funny h2{font-family:KuaiLe,sans-serif;font-size:24px}
+.t-funny .opt{border:3px solid #111;border-radius:14px;box-shadow:4px 4px 0 #111;font-weight:700}
+.t-funny .opt:nth-child(1){background:#ffd6ea;transform:rotate(-2deg)}.t-funny .opt:nth-child(2){background:#fff1a0;transform:rotate(1.6deg)}
+.t-funny .opt:nth-child(3){background:#c8f3fa;transform:rotate(-1.2deg)}.t-funny .opt:nth-child(4){background:#dcf9b8;transform:rotate(2deg)}
+.t-funny .opt b{border:3px solid #111;background:#fff!important;border-radius:50%;font-size:17px}
+.t-funny .opt:active,.t-funny .opt.on{transform:translate(4px,4px) scale(.98)!important;box-shadow:0 0 0 #111}
+.t-funny .card{border:4px solid #111;border-radius:22px;box-shadow:8px 8px 0 #111;background:#ffe14d url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Ccircle cx='4' cy='4' r='2' fill='%23ffc928'/%3E%3C/svg%3E")}
+.t-funny .avatar{border:4px solid #111;background:#ff5fa8;box-shadow:5px 5px 0 #111;border-radius:30% 70% 60% 40%/50% 40% 60% 50%}
+.t-funny .card .badge{border:2.5px solid #111;background:#30d5ea;font-weight:700}
+.t-funny .card h3{font-size:32px;-webkit-text-stroke:1px #111;color:#fff;text-shadow:3px 3px 0 #111}
+.t-funny .card h3 .hl{background:none}
+.t-funny .stage{color:#333!important;font-weight:700}
+.t-funny .sec{border:3px solid #111;border-radius:16px;box-shadow:4px 4px 0 #111}
+.t-funny .sec h4{border:2.5px solid #111;background:#b8f04a;transform:rotate(-4deg)}
+.t-funny .sec.s2 h4{background:#30d5ea}.t-funny .sec.s3 h4{background:#ff5fa8;color:#fff}
+.t-funny .mark{background:linear-gradient(transparent 55%,#ff9fd0 55%)}
+.t-funny .fun{color:#e0157a;font-weight:700}
+.t-funny .hook{background:#111;color:#ffe14d;border-radius:12px;padding:8px;transform:rotate(-1.5deg)}
+.t-funny .foot{color:#6b5a00}
+.t-funny .btn{border:3.5px solid #111;box-shadow:5px 5px 0 #111;border-radius:14px}
+.t-funny .btn.main{background:#ff5fa8;color:#fff;-webkit-text-stroke:.5px #111;transform:rotate(-1.5deg)}
+.t-funny .preview{background:#fff3a8}
+.t-funny .polaroid{border:4px solid #111;box-shadow:8px 8px 0 #111;transform:rotate(2deg)}
+.t-funny .link{color:#111;text-decoration-color:#ff5fa8}
+
+/* ===== 梵高版（?theme=vangogh）：原创程序生成的旋涡笔触 ===== */
+body.vg{--ink:#1d2f6f;background:#1a2f6a url(img/vg-bg.jpg) center top/100% auto repeat-y;color:#1d2f6f}
+body.vg:before{display:none}
+.vg .dd use{filter:none}
+.vg #start h1{color:#ffd54a;text-shadow:2px 2px 0 #13235a,0 0 18px rgba(255,213,74,.5)}
+.vg #start .sub,.vg .pick,.vg .tiny{color:#fff6d6;text-shadow:0 1px 3px #0b1640}
+.vg .hl{background:none}.vg .hl-y{background:linear-gradient(transparent 60%,rgba(255,213,74,.6) 60%)}
+.vg .mode{border:3px solid #e2b33c!important;border-radius:18px!important;box-shadow:0 6px 0 #0d1a4a,0 0 0 4px rgba(255,213,74,.25)!important;background:#fdf1cf!important;color:#1d2f6f!important}
+.vg .mode b{color:#1d2f6f!important;-webkit-text-stroke:0!important;text-shadow:none!important}
+.vg .mode small{background:none!important;border:0!important}
+.vg .mode .tape{background:#e2b33c!important}
+.vg .chip{background:#ffd54a!important;border:2px solid #13235a!important;color:#13235a}
+.vg .count{color:#ffd54a!important;-webkit-text-stroke:0!important;text-shadow:1px 1px 0 #0b1640!important}
+.vg .track{border:2.5px solid #ffd54a!important;background:#13235a}
+.vg .track i{background:repeating-linear-gradient(-45deg,#ffd54a 0 8px,#f2a93b 8px 16px)!important}
+.vg .qcard,.vg .card{background:#fdf4d8!important;border:3px solid #e2b33c!important;border-radius:18px!important;box-shadow:0 8px 0 #0d1a4a,0 0 0 5px rgba(255,213,74,.25)!important;transform:none!important}
+.vg .card{background:#fdf4d8 url(img/vg-bg.jpg) center/cover!important;padding-top:22px}
+.vg .card .head{background:rgba(253,244,216,.94);border-radius:14px;padding:12px 8px;border:2px solid #e2b33c}
+.vg .avatar{background:#ffd54a!important;border:3px solid #1d2f6f!important;box-shadow:0 0 0 6px rgba(255,213,74,.35)!important}
+.vg .card h3{color:#1d2f6f!important;-webkit-text-stroke:0!important;text-shadow:none!important}
+.vg .sec{background:rgba(253,244,216,.96)!important;border:2px solid #e2b33c!important;border-radius:14px!important;box-shadow:none!important}
+.vg .sec h4{background:#ffd54a!important;border:2px solid #1d2f6f!important;color:#1d2f6f!important}
+.vg .mark{background:linear-gradient(transparent 60%,rgba(255,213,74,.7) 60%)!important}
+.vg .fun{color:#b4521c!important}
+.vg .opt{background:#fffaf0!important;border:2px solid #1d2f6f!important;box-shadow:3px 3px 0 #e2b33c!important;border-radius:12px!important}
+.vg .opt b{background:#ffd54a!important;border:2px solid #1d2f6f!important}
+.vg .opt.on,.vg .opt:active{background:#ffe9a0!important}
+.vg .hook{background:#1d2f6f!important;color:#ffd54a!important;border-radius:12px;padding:8px}
+.vg .foot{color:#fff6d6!important;text-shadow:0 1px 2px #0b1640}
+.vg .btn{background:#fdf4d8!important;border:3px solid #e2b33c!important;color:#1d2f6f!important;box-shadow:0 5px 0 #0d1a4a!important;border-radius:14px!important}
+.vg .btn.main{background:#ffd54a!important}
+.vg .link{color:#fff6d6!important;text-decoration-color:#ffd54a!important}
+.vg .preview{background:#13235a url(img/vg-bg.jpg) center/cover!important}
+.vg .pv-tip{color:#ffd54a}
+.vg .polaroid{border:3px solid #e2b33c!important;box-shadow:0 0 0 6px rgba(255,213,74,.3)!important}
+.vg .basis{color:#1d2f6f!important}
+.theme-link{display:inline-block;margin-top:14px;font-size:14px;color:#a5808e;text-decoration:underline wavy #ffd54a;text-underline-offset:5px}
+.vg .theme-link{color:#ffd54a}
+.vg .pv-tip{background:#1d2f6f;color:#ffd54a;padding:4px 14px;border-radius:14px;border:2px solid #e2b33c}
+.vg .foot{background:rgba(29,47,111,.85);border-radius:10px;padding:4px 6px;text-shadow:none}
+.vg .arr use,.vg .pick .arr{color:#ffd54a}
+.t-serious .hook,.t-funny .hook{font-size:18px}
