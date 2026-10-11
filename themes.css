@@ -14,9 +14,17 @@ body.t-serious:before{display:none}
 .t-serious .qcard:before,.t-serious .card:after{content:"";position:absolute;top:-10px;left:50%;width:90px;height:22px;margin-left:-45px;background:rgba(201,139,139,.55);transform:rotate(-3deg)}
 .t-serious .qdim{border:0;background:#eef2ea;color:#5f7a5a}
 .t-serious h2,.t-serious h3,.t-serious .big,.t-serious .hook{font-family:WenKai,serif;font-weight:700}
-.t-serious .opt{transform:none!important;border:1.5px solid #cbbfae;border-radius:4px;box-shadow:none;background:#fffdf8}
-.t-serious .opt b{border:1.5px solid #8a7a6a;font-family:WenKai,serif;background:#f3ede2!important;border-radius:50%}
-.t-serious .opt:active,.t-serious .opt.on{background:#e6eedf;border-color:#8fa88a}
+/* fluffy opts — serious */
+.t-serious .opt{transform:none!important;border:2px solid #cbbfae;border-radius:22px;background:#fffdf8;
+  box-shadow:0 2px 0 rgba(255,255,255,.7) inset,0 8px 18px rgba(140,130,110,.18),0 3px 0 #e8dfd0}
+.t-serious .opt b{border:1.5px solid #8a7a6a;font-family:WenKai,serif;background:#f3ede2!important;border-radius:50%;position:relative}
+.t-serious .opt:nth-child(1) b{background:#f4e4e0!important}.t-serious .opt:nth-child(2) b{background:#f3ede2!important}.t-serious .opt:nth-child(3) b{background:#e8efe3!important}.t-serious .opt:nth-child(4) b{background:#eef2ea!important}
+.t-serious .opt:active{transform:scale(.97) translateY(3px)!important;box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 3px 8px rgba(140,130,110,.15),0 1px 0 #e8dfd0}
+.t-serious .opt.on{background:#eef5ea;border-color:#8fa88a;transform:scale(1) translateY(0)!important;
+  box-shadow:0 2px 0 rgba(255,255,255,.75) inset,0 10px 20px rgba(140,130,110,.16),0 4px 0 #dfe7d8;
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s ease}
+.t-serious .opt.on b::after{background:#8fa88a;box-shadow:0 0 0 3px rgba(143,168,138,.35)}
+.t-serious .fp{color:#5f7a5a;border-color:#b9c9b0;background:rgba(255,253,248,.92)}
 .t-serious .card{background:#fffdf8 url(img/wc-bg.jpg) center/cover}
 .t-serious .avatar{border:1.5px solid #8a7a6a;box-shadow:none;background:#f1e4e0;border-radius:50%}
 .t-serious .card .badge{border:1px solid #8a7a6a;background:#fffdf8}
@@ -50,11 +58,16 @@ body.t-funny:before{display:none}
 .t-funny .qcard.flip{animation:boing .45s cubic-bezier(.3,1.8,.5,1)}
 @keyframes boing{from{opacity:0;transform:scale(.6) rotate(-8deg)}to{opacity:1}}
 .t-funny h2{font-family:KuaiLe,sans-serif;font-size:24px}
-.t-funny .opt{border:3px solid #111;border-radius:14px;box-shadow:4px 4px 0 #111;font-weight:700}
-.t-funny .opt:nth-child(1){background:#ffd6ea;transform:rotate(-2deg)}.t-funny .opt:nth-child(2){background:#fff1a0;transform:rotate(1.6deg)}
-.t-funny .opt:nth-child(3){background:#c8f3fa;transform:rotate(-1.2deg)}.t-funny .opt:nth-child(4){background:#dcf9b8;transform:rotate(2deg)}
-.t-funny .opt b{border:3px solid #111;background:#fff!important;border-radius:50%;font-size:17px}
-.t-funny .opt:active,.t-funny .opt.on{transform:translate(4px,4px) scale(.98)!important;box-shadow:0 0 0 #111}
+/* fluffy opts — funny */
+.t-funny .opt{border:2px solid #ffb3c6;border-radius:22px;box-shadow:0 2px 0 rgba(255,255,255,.7) inset,0 8px 18px rgba(180,140,150,.2),0 3px 0 #f3d0da;font-weight:700;transform:none!important}
+.t-funny .opt:nth-child(1){background:#fff5f8}.t-funny .opt:nth-child(2){background:#fffaf0}.t-funny .opt:nth-child(3){background:#f5fcff}.t-funny .opt:nth-child(4){background:#f6fdf0}
+.t-funny .opt b{border:2px solid #ffb3c6;background:#fff!important;border-radius:50%;font-size:17px;position:relative}
+.t-funny .opt:active{transform:scale(.97) translateY(3px)!important;box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 3px 8px rgba(180,140,150,.18),0 1px 0 #f3d0da}
+.t-funny .opt.on{background:#ffe8f0;border-color:#ff8fab;transform:scale(1) translateY(0)!important;
+  box-shadow:0 2px 0 rgba(255,255,255,.75) inset,0 10px 20px rgba(180,140,150,.2),0 4px 0 #f3d0da;
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s ease}
+.t-funny .opt.on b::after{background:#ff5fa8;box-shadow:0 0 0 3px rgba(255,95,168,.3)}
+.t-funny .fp{color:#e0157a;border:2px solid #111;background:#fff1a0;font-family:KuaiLe,sans-serif;box-shadow:3px 3px 0 rgba(0,0,0,.12)}
 .t-funny .card{border:4px solid #111;border-radius:22px;box-shadow:8px 8px 0 #111;background:#ffe14d url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Ccircle cx='4' cy='4' r='2' fill='%23ffc928'/%3E%3C/svg%3E")}
 .t-funny .avatar{border:4px solid #111;background:#ff5fa8;box-shadow:5px 5px 0 #111;border-radius:30% 70% 60% 40%/50% 40% 60% 50%}
 .t-funny .card .badge{border:2.5px solid #111;background:#30d5ea;font-weight:700}
@@ -98,9 +111,16 @@ body.vg:before{display:none}
 .vg .sec h4{background:#ffd54a!important;border:2px solid #1d2f6f!important;color:#1d2f6f!important}
 .vg .mark{background:linear-gradient(transparent 60%,rgba(255,213,74,.7) 60%)!important}
 .vg .fun{color:#b4521c!important}
-.vg .opt{background:#fffaf0!important;border:2px solid #1d2f6f!important;box-shadow:3px 3px 0 #e2b33c!important;border-radius:12px!important}
-.vg .opt b{background:#ffd54a!important;border:2px solid #1d2f6f!important}
-.vg .opt.on,.vg .opt:active{background:#ffe9a0!important}
+/* fluffy opts — vangogh */
+.vg .opt{background:#eef2ff!important;border:2px solid #7a8fd4!important;border-radius:22px!important;
+  box-shadow:0 2px 0 rgba(255,255,255,.55) inset,0 8px 18px rgba(30,50,120,.22),0 3px 0 #c8d2f0!important;transform:none!important}
+.vg .opt b{background:#ffd54a!important;border:2px solid #1d2f6f!important;border-radius:50%!important;position:relative}
+.vg .opt:active{transform:scale(.97) translateY(3px)!important;box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 3px 8px rgba(30,50,120,.18),0 1px 0 #c8d2f0!important}
+.vg .opt.on,.vg .opt:active.on{background:#dde6ff!important;border-color:#5a7ad4!important;transform:scale(1) translateY(0)!important;
+  box-shadow:0 2px 0 rgba(255,255,255,.6) inset,0 10px 20px rgba(30,50,120,.2),0 4px 0 #b8c6f0!important;
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s ease}
+.vg .opt.on b::after{background:#ffe14d;box-shadow:0 0 0 3px rgba(255,225,77,.4)}
+.vg .fp{color:#ffd54a;border-color:#e2b33c;background:rgba(19,35,90,.88)}
 .vg .hook{background:#1d2f6f!important;color:#ffd54a!important;border-radius:12px;padding:8px}
 .vg .foot{color:#fff6d6!important;text-shadow:0 1px 2px #0b1640}
 .vg .btn{background:#fdf4d8!important;border:3px solid #e2b33c!important;color:#1d2f6f!important;box-shadow:0 5px 0 #0d1a4a!important;border-radius:14px!important}

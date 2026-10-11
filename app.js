@@ -22,10 +22,17 @@ function render(){
   $('#qtext').textContent=q.q;
   $('#opts').innerHTML='';
   q.opts.forEach((o,i)=>{const b=document.createElement('button');b.className='opt'+(answers[idx]===i?' on':'');
-    b.innerHTML='<b>'+'ABCD'[i]+'</b><span>'+o[0]+'</span>';b.onclick=()=>pick(i);$('#opts').appendChild(b)});
+    b.innerHTML='<b>'+'ABCD'[i]+'</b><span>'+o[0]+'</span>';b.onpointerdown=()=>{try{if(navigator.vibrate)navigator.vibrate(12)}catch(e){}};b.onclick=()=>pick(i);$('#opts').appendChild(b)});
   $('#back').style.visibility=idx?'visible':'hidden';
 }
-function pick(i){answers[idx]=i;if(idx<QUIZ[mode].questions.length-1){idx++;setTimeout(render,120)}else result()}
+function pick(i){
+  answers[idx]=i;
+  try{if(navigator.vibrate)navigator.vibrate([8,30,8])}catch(e){}
+  const btns=[...document.querySelectorAll('#opts .opt')];
+  btns.forEach((b,k)=>b.classList.toggle('on',k===i));
+  const go=()=>{if(idx<QUIZ[mode].questions.length-1){idx++;render()}else result()};
+  setTimeout(go,160);
+}
 function score(){
   const s={O:0,I:0,S:0,C:0},n={O:0,I:0,S:0,C:0},src={O:[],I:[],S:[],C:[]};
   answers.forEach((a,qi)=>{const sc=QUIZ[mode].questions[qi].opts[a][1];for(const k in sc){s[k]+=sc[k];n[k]+=2;src[k].push({qi,v:sc[k]})}});
@@ -46,9 +53,9 @@ function result(){
   const dims=Object.keys(DIMS).map(k=>'<div>'+DIMS[k]+' '+pct(k)+'%<span><i style="width:'+pct(k)+'%"></i></span></div>').join('');
   const li=(ic,txt,cls)=>'<p class="li '+(cls||'')+'">'+ICON(ic,t,18)+'<span>'+txt+'</span></p>';
   $('#card').innerHTML=
-   '<div class="head"><span class="badge">'+ICON(Q.icon,t,16)+Q.name+' · 恋爱小测验</span>'+
+   '<div class="head"><span class="badge">'+ICON(Q.icon,t,16)+Q.name+' · 人间选择题</span>'+
    '<div class="portrait">'+ICON(best.motif,t,132,best.bg)+'</div>'+
-   '<p class="you">恋爱后的你，像</p><h3 class="cname">'+best.name+'</h3>'+
+   '<p class="you">恋爱后的你，像</p><h3 class="cname">'+best.name+'</h3>'+('<p class="fp"><small>'+(mode==='funny'?'本局标签':'你的选择指纹')+'</small>'+[status.fp,sig.fp,best.fp].filter(Boolean).join(' · ')+'</p>')+
    '<div class="stage">'+best.from+'<br>'+best.stage+'</div></div>'+
    '<div class="sec s1"><h4>壹 · 会不会恋爱</h4><div class="row">'+ICON(status.icon,t,44)+'<div><div class="big">'+status.name+'</div><p>'+status.text+'</p></div></div>'+(mode==='serious'?'<div class="dims">'+dims+'</div>':'')+'</div>'+
    '<div class="sec s2"><h4>贰 · 恋爱信号灯 <small>娱乐向，不是预言</small></h4><div class="row">'+ICON(sig.icon,t,44)+'<div><div class="big">'+sig.name+'</div><p>'+sig.text+'</p></div></div>'+li('bulb',tip,'fun')+'</div>'+

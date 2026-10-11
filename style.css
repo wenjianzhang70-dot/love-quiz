@@ -45,11 +45,21 @@ h1{font-size:40px;margin:6px 0 0;letter-spacing:3px}
 .qdim{display:inline-block;font-size:13px;background:#efeaff;border:1.5px dashed #8a78d0;color:#6b58b8;padding:2px 10px;border-radius:12px;margin-bottom:10px}
 .qdim:empty{display:none}
 h2{font-size:23px;line-height:1.45;margin-bottom:14px}
-.opt{display:flex;align-items:center;width:100%;text-align:left;background:var(--paper);border:2px solid var(--ink);border-radius:var(--wob2);padding:12px 12px;margin:12px 0;font-size:16.5px;color:var(--ink);cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .1s,box-shadow .1s,background .1s;font-family:inherit;line-height:1.45}
-.opt:nth-child(odd){transform:rotate(-.8deg)}.opt:nth-child(even){transform:rotate(.7deg);border-radius:var(--wob)}
-.opt b{flex:none;width:30px;height:30px;line-height:27px;text-align:center;border:2px solid var(--ink);border-radius:50% 45% 55% 48%;margin-right:10px;font-family:KuaiLe,sans-serif;font-weight:normal;background:#fff}
+.opt{display:flex;align-items:center;width:100%;text-align:left;min-height:52px;padding:14px 16px;margin:12px 0;font-size:16.5px;color:var(--ink);cursor:pointer;font-family:inherit;line-height:1.45;position:relative;
+  border-radius:22px;border:2px solid #f0c8d4;background:#fffaf5;
+  box-shadow:0 2px 0 rgba(255,255,255,.7) inset,0 8px 18px rgba(180,140,150,.22),0 3px 0 #f3d0da;
+  transform:none;transition:transform .09s ease-out,box-shadow .09s ease-out,background .15s,border-color .15s}
+.opt:nth-child(odd),.opt:nth-child(even){transform:none;border-radius:22px}
+.opt b{position:relative;flex:none;width:30px;height:30px;line-height:27px;text-align:center;border:2px solid #f0c8d4;border-radius:50%;margin-right:10px;font-family:KuaiLe,sans-serif;font-weight:normal;background:#fff}
 .opt:nth-child(1) b{background:#ffe1ea}.opt:nth-child(2) b{background:#fff1c2}.opt:nth-child(3) b{background:#e6e0ff}.opt:nth-child(4) b{background:#dff5e8}
-.opt:active,.opt.on{transform:translate(2px,3px) rotate(0);box-shadow:0 0 0 var(--ink);background:#ffe1ea}
+.opt:active{transform:scale(.97) translateY(3px);box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 3px 8px rgba(180,140,150,.18),0 1px 0 #f3d0da}
+.opt.on{background:#ffe8f0;border-color:#ff8fab;transform:scale(1) translateY(0);
+  box-shadow:0 2px 0 rgba(255,255,255,.75) inset,0 10px 20px rgba(180,140,150,.2),0 4px 0 #f3d0da;
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s ease,background .15s,border-color .15s}
+.opt.on b::after{content:"";position:absolute;right:-4px;top:-4px;width:10px;height:10px;border-radius:50%;background:#ff5fa8;box-shadow:0 0 0 3px rgba(255,143,171,.35);animation:pom .18s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pom{from{transform:scale(0)}to{transform:scale(1)}}
+.fp{margin:6px auto 2px;font-size:14px;letter-spacing:.5px;color:#a8615f;background:rgba(255,248,240,.9);border:1.5px dashed #e0c4b8;display:table;padding:4px 14px;border-radius:999px;line-height:1.4}
+.fp small{display:block;font-size:11px;opacity:.65;letter-spacing:1px;margin-bottom:1px}
 .link{background:none;border:0;color:#a5808e;font-size:15px;margin:18px auto 0;cursor:pointer;display:block;font-family:inherit;text-decoration:underline wavy #ffb3c6;text-underline-offset:5px}
 /* 结果卡 */
 .card{position:relative;background:#fffdf7;border:3px solid var(--ink);border-radius:var(--wob);padding:26px 18px 18px;box-shadow:6px 7px 0 #f6c9d5;overflow:hidden;
