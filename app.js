@@ -1,3 +1,4 @@
+var CUR=[];
 (function(){
 const $=s=>document.querySelector(s);
 let mode,idx,answers;
@@ -8,17 +9,17 @@ function theme(m){document.body.className=(m?'t-'+m:'')+(VG?' vg':'')}
 if(VG){theme();$('#themeLink').href='./';$('#themeText').textContent='回到手绘版';$('#themeLink').firstElementChild.dataset.ic='heart';}
 paint();
 function show(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('show',p.id===id));scrollTo(0,0)}
-function start(m){mode=m;theme(m);idx=0;answers=[];const t=T();
+function start(m){mode=m;theme(m);idx=0;answers=[];CUR=nextQuiz(m);const t=T();
   $('#modeTag').innerHTML=ICON(QUIZ[m].icon,t,22)+'<span>'+QUIZ[m].name+'</span>';
   $('#pen').innerHTML=ICON(VG?'sunflower':'pencil',t,30);
   $('#qdeco').innerHTML=ICON(m==='funny'?'star':'heart',t,36);
   render();show('quiz')}
 function render(){
-  const qs=QUIZ[mode].questions,q=qs[idx];
+  const qs=CUR,q=qs[idx];
   $('#count').textContent=(idx+1)+' / '+qs.length;
   const w=(idx/qs.length*100)+'%';$('#barIn').style.width=w;$('#pen').style.left=w;
   const qc=$('#qcard');qc.classList.remove('flip');void qc.offsetWidth;qc.classList.add('flip');
-  $('#qdim').textContent=mode==='serious'&&q.d?q.d:'';
+  $('#qdim').textContent=mode==='serious'&&q.d?(DIMLBL[q.d]||q.d):'';
   $('#qtext').textContent=q.q;
   $('#opts').innerHTML='';
   q.opts.forEach((o,i)=>{const b=document.createElement('button');b.className='opt'+(answers[idx]===i?' on':'');
@@ -30,12 +31,12 @@ function pick(i){
   try{if(navigator.vibrate)navigator.vibrate([8,30,8])}catch(e){}
   const btns=[...document.querySelectorAll('#opts .opt')];
   btns.forEach((b,k)=>b.classList.toggle('on',k===i));
-  const go=()=>{if(idx<QUIZ[mode].questions.length-1){idx++;render()}else result()};
+  const go=()=>{if(idx<CUR.length-1){idx++;render()}else result()};
   setTimeout(go,160);
 }
 function score(){
   const s={O:0,I:0,S:0,C:0},n={O:0,I:0,S:0,C:0},src={O:[],I:[],S:[],C:[]};
-  answers.forEach((a,qi)=>{const sc=QUIZ[mode].questions[qi].opts[a][1];for(const k in sc){s[k]+=sc[k];n[k]+=2;src[k].push({qi,v:sc[k]})}});
+  answers.forEach((a,qi)=>{const sc=CUR[qi].opts[a][1];for(const k in sc){s[k]+=sc[k];n[k]+=2;src[k].push({qi,v:sc[k]})}});
   const r={};for(const k in s)r[k]=n[k]?s[k]/n[k]:0.5;
   return {r,src};
 }

@@ -135,5 +135,5 @@ window.SIGNAL = {
 };
 
 // 平衡系数：让随机作答时 6 个角色出现概率接近（由模拟校准，改角色后需重算）
-window.BIAS={"serious":[-0.101,0.278,-0.135,0.062,0.114,-0.219],"funny":[0.4,-0.376,0.281,0.151,0.172,-0.627]};
+window.BIAS={"serious":[-0.033,0.256,-0.035,-0.034,-0.035,-0.118],"funny":[0.255,-0.104,0.129,0.179,-0.021,-0.438]};
 for(const m in window.BIAS)window.QUIZ[m].chars.forEach((c,i)=>c.bias=window.BIAS[m][i]);
