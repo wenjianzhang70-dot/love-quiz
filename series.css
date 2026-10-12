@@ -21,3 +21,4 @@ body.t-sx-work{background-color:#f6f8fc!important;background-image:radial-gradie
 .sx-stk{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sx-stk div{background:#f3f7fd;border-radius:18px;padding:10px;transform:rotate(-1.2deg);box-shadow:0 3px 0 #d8e3f3}
 .sx-stk div:nth-child(even){transform:rotate(1.4deg);background:#fffaf0;box-shadow:0 3px 0 #f5e6c0}.sx-stk small{display:block;color:#8a93a8;font-size:12px}.sx-stk b{font-weight:normal;color:#4a5570}
 .actions [hidden]{display:none!important}
+.sx-mate{display:flex;align-items:center;gap:10px}.sx-mate svg{flex:none}.sx-mate b{font-weight:normal;color:#6f8fc0}
