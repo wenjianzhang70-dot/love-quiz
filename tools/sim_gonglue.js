@@ -4,7 +4,8 @@ let ok=true;const B=GL.bank;const c={};B.forEach(q=>c[q.d]=(c[q.d]||0)+1);consol
 // 抽题：8 题、每维 2、组互斥、连玩重复
 const rep=[];for(let t=0;t<500;t++){let seen=[];for(let p=0;p<10;p++){const qs=GL.draw(seen);const d={};qs.forEach(q=>d[q.d]=(d[q.d]||0)+1);
  if(qs.length!==8||Object.values(d).some(v=>v!==2)||new Set(qs.map(q=>q.g)).size!==8){ok=false}
- rep[p]=(rep[p]||0)+qs.filter(q=>seen.includes(q.id)).length;seen=seen.concat(qs.map(q=>q.id)).slice(-60)}}
+ rep[p]=(rep[p]||0)+qs.filter(q=>seen.includes(q.id)).length;seen=seen.concat(qs.map(q=>q.id)).slice(-80)}}
+if(rep.some(x=>x>0)){ok=false;console.log('REPEATS')}
 console.log('每局平均重复题数(第1..10局):',rep.map(x=>(x/500).toFixed(2)).join(' '));
 // 匹配度分布：每类对象 × 随机作答
 const N=+process.argv[2]||4000;const all=[];const by={};

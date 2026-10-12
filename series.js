@@ -31,20 +31,30 @@ var M={
 function shape(k,size,bg){return '<svg viewBox="0 0 100 100" width="'+size+'" height="'+size+'"><circle cx="50" cy="50" r="49" fill="'+(bg||'#fff5f0')+'"/>'+(M[k]||M.yarn)+'</svg>'}
 W.SXSHAPE=shape;
 // —— 抽题：10 题，各维 2–3，同组互斥，优先没见过的 ——
-var PATS=[[3,3,2,2],[3,2,3,2],[3,2,2,3],[2,3,3,2],[2,3,2,3],[2,2,3,3]];
+// 10 局一轮的配额表：每维 10 局合计正好 25 题，100 题库一轮刚好用完
+var SCHED=[[3,3,2,2],[2,2,3,3],[3,2,3,2],[2,3,2,3],[3,2,2,3],[2,3,3,2],[3,3,2,2],[2,2,3,3],[3,2,3,2],[2,3,2,3]];
 function sh(a,r){for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
-function draw(key,seen,r){r=r||Math.random;var D=SX[key],dims=Object.keys(D.dims),bank=D.bank,rank={};seen.forEach(function(id,i){rank[id]=i});
-  var pat=PATS[Math.floor(r()*PATS.length)],out=[],gs={};
-  dims.forEach(function(d,k){var c=sh(bank.filter(function(x){return x.d===d}),r),need=pat[k];
-    var fresh=c.filter(function(x){return !(x.id in rank)}),old=c.filter(function(x){return x.id in rank}).sort(function(a,b){return rank[a.id]-rank[b.id]});
-    [fresh,old].forEach(function(L){L.forEach(function(x){if(need>0&&!gs[x.g]){gs[x.g]=1;out.push(x);need--}})})});
-  return sh(out,r)}
-function next(key){var k='lq-seen-'+key,s={ids:[]},st=null;try{st=W.localStorage;s=JSON.parse(st.getItem(k)||'{"ids":[]}')}catch(e){st=null;s=(W.__sxMem||{})[key]||{ids:[]}}
-  var qs=draw(key,s.ids);s.ids=s.ids.concat(qs.map(function(x){return x.id})).slice(-SX[key].bank.length);
+function pickSet(bank,dims,quota,seen,r){var rank={},left={};seen.forEach(function(id,i){rank[id]=i});
+  bank.forEach(function(x){if(!(x.id in rank))left[x.g]=(left[x.g]||0)+1});var best=null,bs=1e9;
+  for(var t=0;t<40&&bs>0;t++){var out=[],gs={},rep=0;
+    sh(dims.map(function(d,k){return k}),r).forEach(function(k){var d=dims[k],need=quota[k],c=sh(bank.filter(function(x){return x.d===d}),r);
+      var fresh=c.filter(function(x){return !(x.id in rank)}).sort(function(a,b){return left[b.g]-left[a.g]+(r()-.5)*(t?1.5:0)}),
+          old=c.filter(function(x){return x.id in rank}).sort(function(a,b){return rank[a.id]-rank[b.id]});
+      fresh.forEach(function(x){if(need>0&&!gs[x.g]){gs[x.g]=1;out.push(x);need--}});
+      old.forEach(function(x){if(need>0&&!gs[x.g]){gs[x.g]=1;out.push(x);need--;rep++}});
+      if(need>0)rep+=100});
+    if(rep<bs){bs=rep;best=out}}
+  return sh(best,r)}
+function draw(key,seen,play,r){r=r||Math.random;var D=SX[key];return pickSet(D.bank,Object.keys(D.dims),SCHED[(play||0)%10],seen,r)}
+function next(key){var k='lq-seen-'+key,s={ids:[],n:0},st=null;try{st=W.localStorage;s=JSON.parse(st.getItem(k)||'{"ids":[],"n":0}')}catch(e){st=null;s=(W.__sxMem||{})[key]||{ids:[],n:0}}
+  var qs=draw(key,s.ids,s.n||0);s.ids=s.ids.concat(qs.map(function(x){return x.id})).slice(-SX[key].bank.length);s.n=(s.n||0)+1;
   try{st.setItem(k,JSON.stringify(s))}catch(e){(W.__sxMem=W.__sxMem||{})[key]=s}return qs}
+W.SXPICK=pickSet;
 function score(key,qs,ans){var D=SX[key],s={},n={};Object.keys(D.dims).forEach(function(k){s[k]=0;n[k]=0});
   ans.forEach(function(a,i){var sc=qs[i].opts[a][1];for(var k in sc){s[k]+=sc[k];n[k]+=2}});var r={};for(var k in s)r[k]=n[k]?s[k]/n[k]:.5;return r}
-function pickRes(key,r){var D=SX[key],best,bd=1e9;D.results.forEach(function(x){var d=(D.bias&&D.bias[x.id])||0;for(var k in x.p)d+=Math.pow(x.p[k]/2-r[k],2);if(d<bd){bd=d;best=x}});return best}
+function hsh(t){var h=2166136261;for(var i=0;i<t.length;i++){h^=t.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0)/4294967296}
+// 同一组答案结果稳定：用答案算出的固定微扰打破平局，让分布更均匀
+function pickRes(key,r){var D=SX[key],best,bd=1e9,sig=Object.keys(r).map(function(k){return r[k].toFixed(3)}).join(',');D.results.forEach(function(x){var d=((D.bias&&D.bias[x.id])||0)+hsh(sig+x.id)*0.04;for(var k in x.p)d+=Math.pow(x.p[k]/2-r[k],2);if(d<bd){bd=d;best=x}});return best}
 W.SXE={draw:draw,next:next,score:score,pick:pickRes,ORDER:ORDER};
 if(typeof document==='undefined'||!document.getElementById('sxQuiz'))return;
 // —— 页面 ——

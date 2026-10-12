@@ -119,16 +119,41 @@ A('g56','walk','S','散步时 TA 一直不说话，你？',[['安静走着也挺
 A('g57','gamenight','I','朋友组局玩桌游，TA 也在，你？',[['挑 TA 旁边的位置',{I:2}],['和 TA 一队',{I:1}],['随便坐',{I:0}],['坐对面偷偷观察',{I:0}]]),
 A('g58','gamenight','C','桌游里 TA 骗了你一把，你？',[['当场说「你等着」',{C:2}],['笑着认输',{C:1,S:1}],['下局偷偷报复',{C:0}],['有点小生气不说',{C:0}]]),
 A('g59','weekend','O','一个人的周末，你更想？',[['去个新地方逛逛',{O:2}],['和朋友约饭',{O:1}],['在家躺着',{O:0}],['顺便看看 TA 有没有空',{O:1,I:1}]]),
-A('g60','weekend','S','你约 TA，TA 说要先问问朋友有没有安排，你？',[['好，等 TA 回复',{S:2}],['有点觉得自己是备选',{S:0}],['没关系，问完告诉我',{S:1,C:1}],['说「那我们一起叫上朋友」',{S:1,O:1}]])
+A('g60','weekend','S','你约 TA，TA 说要先问问朋友有没有安排，你？',[['好，等 TA 回复',{S:2}],['有点觉得自己是备选',{S:0}],['没关系，问完告诉我',{S:1,C:1}],['说「那我们一起叫上朋友」',{S:1,O:1}]]),
+A('g61','station','I','在车站偶遇 TA，你？',[['走过去打招呼',{I:2}],['假装没看到',{I:0}],['看 TA 有没有看到你',{I:0}],['发消息说「我好像看到你了」',{I:1}]]),
+A('g62','station','S','TA 和你挥了挥手就走了，你？',[['挺好，下次再聊',{S:2}],['有点失落',{S:1}],['是不是不想聊',{S:0}],['追上去问去哪',{S:1}]]),
+A('g63','library','O','TA 约你去图书馆自习，你？',[['好啊，一起',{O:2}],['我在家学更好',{O:0}],['去，但坐远一点',{O:1}],['问问去哪家',{O:1}]]),
+A('g64','library','C','在图书馆 TA 一直跟你说话，你？',[['小声说「我们出去聊」',{C:2}],['继续听',{C:0}],['写纸条回 TA',{C:1}],['假装看书',{C:0}]]),
+A('g65','cake','I','你学会了做蛋糕，你？',[['做一个送给 TA',{I:2}],['自己吃',{I:0}],['发朋友圈',{I:1}],['问 TA 想不想吃',{I:1}]]),
+A('g66','cake','S','TA 说你做的蛋糕有点甜，你？',[['下次少放糖',{S:2}],['有点难过',{S:1}],['是不是不喜欢',{S:0}],['问 TA 喜欢什么口味',{S:1}]]),
+A('g67','concert','O','TA 想去听一场你没听过的演出，你？',[['一起去，试试新的',{O:2}],['算了',{O:0}],['先听几首歌再决定',{O:1}],['你去，回来讲给我听',{O:0}]]),
+A('g68','concert','C','演出结束后你很喜欢，你会？',[['告诉 TA「我好喜欢」',{C:2}],['点点头',{C:0}],['发一条动态',{C:1}],['买张专辑',{C:0}]]),
+A('g69','lost2','I','TA 在问路，你知道路，你？',[['直接带 TA 过去',{I:2}],['指给 TA 看',{I:1}],['等 TA 问你',{I:0}],['说个大概',{I:1}]]),
+A('g70','lost2','S','你带错路了，你？',[['笑着说「我们再找找」',{S:2}],['很尴尬',{S:1}],['觉得 TA 会嫌弃你',{S:0}],['马上看地图',{S:1}]]),
+A('g71','board','O','TA 推荐你看一本很厚的书，你？',[['开始看',{O:2}],['太厚了，算了',{O:0}],['看个简介',{O:1}],['问 TA 最喜欢哪段',{O:1}]]),
+A('g72','board','C','书你没看完，TA 问你觉得怎样，你？',[['说实话「还没看完」',{C:2}],['说「挺好的」',{C:0}],['说看到哪了',{C:1}],['换个话题',{C:0}]]),
+A('g73','garden','I','你们一起种了一盆花，你？',[['每天主动去浇水',{I:2}],['TA 浇就好',{I:0}],['轮流浇',{I:1}],['提醒 TA 浇',{I:1}]]),
+A('g74','garden','S','花蔫了，你？',[['没事，再种一盆',{S:2}],['有点难过',{S:1}],['是不是我没照顾好',{S:0}],['上网查怎么救',{S:1}]]),
+A('g75','fair','O','集市上有个奇怪的小摊，你？',[['拉 TA 一起去看',{O:2}],['绕开走',{O:0}],['远远看看',{O:1}],['问 TA 要不要去',{O:1}]]),
+A('g76','fair','C','TA 在小摊买了个你觉得很丑的东西，你？',[['说「这个有点怪」',{C:2}],['夸好看',{C:0}],['笑着说「很有你的风格」',{C:1}],['不说话',{C:0}]]),
+A('g77','star','I','晚上看到流星，你？',[['马上叫 TA 一起看',{I:2}],['自己许个愿',{I:0}],['拍下来发给 TA',{I:1}],['没看清',{I:0}]]),
+A('g78','star','S','你给 TA 发了星空照片，TA 只回了一个字，你？',[['可能在忙',{S:2}],['有点失落',{S:1}],['觉得 TA 不感兴趣',{S:0}],['再发一张',{S:1}]]),
+A('g79','bus','O','TA 说今天不坐车，走路回家，你？',[['好啊，陪 TA 走',{O:2}],['我坐车',{O:0}],['走一半',{O:1}],['问走多远',{O:1}]]),
+A('g80','bus','C','走路时你脚疼了，你？',[['说「我们歇一会儿吧」',{C:2}],['忍着',{C:0}],['慢慢走',{C:1}],['说「我打车」',{C:1}]])
 ];
 // —— 抽题：每维 2 题，同组互斥，优先没见过的（最近 60 题记在本地）——
-var RING=60,DIMS=['O','I','S','C'];
+var RING=80,DIMS=['O','I','S','C'];
 function sh(a,r){for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
-function draw(seen,r){r=r||Math.random;var rank={};seen.forEach(function(id,i){rank[id]=i});var out=[],gs={};
-  sh(DIMS.slice(),r).forEach(function(d){var c=sh(Q.filter(function(x){return x.d===d}),r);
-    var fresh=c.filter(function(x){return !(x.id in rank)}),old=c.filter(function(x){return x.id in rank}).sort(function(a,b){return rank[a.id]-rank[b.id]});
-    var need=2;[fresh,old].forEach(function(L){L.forEach(function(x){if(need>0&&!gs[x.g]){gs[x.g]=1;out.push(x);need--}})})});
-  return sh(out,r)}
+function draw(seen,r){r=r||Math.random;var rank={},left={};seen.forEach(function(id,i){rank[id]=i});
+  Q.forEach(function(x){if(!(x.id in rank))left[x.g]=(left[x.g]||0)+1});var best=null,bs=1e9;
+  for(var t=0;t<40&&bs>0;t++){var out=[],gs={},rep=0;
+    sh(DIMS.slice(),r).forEach(function(d){var c=sh(Q.filter(function(x){return x.d===d}),r),need=2;
+      var fresh=c.filter(function(x){return !(x.id in rank)}).sort(function(a,b){return left[b.g]-left[a.g]+(r()-.5)*(t?1.5:0)}),
+          old=c.filter(function(x){return x.id in rank}).sort(function(a,b){return rank[a.id]-rank[b.id]});
+      fresh.forEach(function(x){if(need>0&&!gs[x.g]){gs[x.g]=1;out.push(x);need--}});
+      old.forEach(function(x){if(need>0&&!gs[x.g]){gs[x.g]=1;out.push(x);need--;rep++}})});
+    if(rep<bs){bs=rep;best=out}}
+  return sh(best,r)}
 function next(){var st=null,k='lq-seen-gonglue',s={ids:[]};try{st=W.localStorage;s=JSON.parse(st.getItem(k)||'{"ids":[]}')}catch(e){st=null;s=W.__glMem||{ids:[]}}
   var qs=draw(s.ids);s.ids=s.ids.concat(qs.map(function(x){return x.id})).slice(-RING);
   try{st.setItem(k,JSON.stringify(s))}catch(e){W.__glMem=s}return qs}
