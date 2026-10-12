@@ -1,0 +1,23 @@
+/* 系列方向（爱情观/生活/工作）毛毡皮肤 */
+body.t-sx-love{background-color:#fff5f7!important;background-image:radial-gradient(ellipse 60% 40% at 10% 5%,#ffd6e0 0,transparent 60%),radial-gradient(ellipse 50% 40% at 95% 40%,#fff0f4 0,transparent 60%),radial-gradient(ellipse 60% 40% at 40% 100%,#efeaff 0,transparent 60%)!important}
+body.t-sx-life{background-color:#fffaf0!important;background-image:radial-gradient(ellipse 60% 40% at 10% 5%,#fff1c2 0,transparent 60%),radial-gradient(ellipse 50% 40% at 95% 40%,#e6f5ec 0,transparent 60%),radial-gradient(ellipse 60% 40% at 40% 100%,#ffe8d8 0,transparent 60%)!important}
+body.t-sx-work{background-color:#f6f8fc!important;background-image:radial-gradient(ellipse 60% 40% at 10% 5%,#dde8f7 0,transparent 60%),radial-gradient(ellipse 50% 40% at 95% 40%,#fff1c2 0,transparent 60%),radial-gradient(ellipse 60% 40% at 40% 100%,#e6f5ec 0,transparent 60%)!important}
+.t-sx-love .track i{background:linear-gradient(90deg,#ffd6e0,#ffadc2)!important}.t-sx-life .track i{background:linear-gradient(90deg,#fff1c2,#f5d77a)!important}.t-sx-work .track i{background:linear-gradient(90deg,#dde8f7,#a9c1e4)!important}
+.sx-card .head{text-align:center}.sx-card .portrait svg{border-radius:50%;box-shadow:var(--felt-sh)}
+.t-sx-love .card h3.cname{color:#e07a98!important}.t-sx-life .card h3.cname{color:#c99a2a!important;text-shadow:0 2px 0 #fff,0 4px 0 #f5e2a8!important}.t-sx-work .card h3.cname{color:#6f8fc0!important;text-shadow:0 2px 0 #fff,0 4px 0 #cbd9ef!important}
+.t-sx-love .sec h4{background:#ffd6e0!important}.t-sx-life .sec h4{background:#fff1c2!important}.t-sx-work .sec h4{background:#dde8f7!important}
+.t-sx-love .btn.main{background:linear-gradient(180deg,#ffd6e0,#ffc0d0)!important}.t-sx-life .btn.main{background:linear-gradient(180deg,#fff1c2,#f8e0a0)!important;color:#7a5a1a!important}.t-sx-work .btn.main{background:linear-gradient(180deg,#e6eefa,#cddcf2)!important;color:#3f557a!important}
+.t-sx-life .hook{background:#fff1c2!important;color:#8a6a1a!important}.t-sx-work .hook{background:#dde8f7!important;color:#3f557a!important}
+.sx-card .li{padding-left:14px;position:relative}.sx-card .li:before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:#ffb3c6}
+.sx-spec{display:grid;gap:12px;margin:6px 0}.sx-sp{display:grid;grid-template-columns:3em 1fr 3em;align-items:center;gap:8px;font-size:13px;color:#8a7380;text-align:center}
+.sx-line{position:relative;height:10px;border-radius:999px;background:repeating-linear-gradient(90deg,#f6e3e8 0 6px,#fdf0f3 6px 10px);box-shadow:inset 0 2px 3px rgba(180,140,150,.2)}
+.sx-line i{position:absolute;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff 0 18%,#ff9fbb 22%);box-shadow:0 3px 5px rgba(200,120,150,.3)}
+.sx-line i.b{background:radial-gradient(circle at 35% 35%,#fff 0 18%,#b9a6ee 22%)}
+.sx-note{font-size:12.5px;color:#a08690;margin-top:8px}
+.sx-pair{text-align:center;margin:4px 0 10px}.sx-pair b{font-family:KuaiLe,sans-serif;font-weight:normal;font-size:46px;color:#e07a98;text-shadow:0 2px 0 #fff,0 4px 0 #f6c3d0}.sx-pair span{display:block;font-size:12.5px;color:#a08690}
+.sx-pairbtn{background:linear-gradient(180deg,#efeaff,#e2d9fb)!important;color:#6a5a98!important}
+.sx-day{list-style:none;padding:0;margin:0;display:grid;gap:8px}.sx-day li{display:flex;gap:10px;align-items:center;background:#fffaf0;border-radius:16px;padding:8px 12px;box-shadow:0 2px 0 #f5e6c0}
+.sx-day b{flex:none;font-family:KuaiLe,sans-serif;font-weight:normal;color:#c99a2a;background:#fff;border-radius:999px;padding:2px 10px;box-shadow:var(--felt-sh)}
+.sx-stk{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sx-stk div{background:#f3f7fd;border-radius:18px;padding:10px;transform:rotate(-1.2deg);box-shadow:0 3px 0 #d8e3f3}
+.sx-stk div:nth-child(even){transform:rotate(1.4deg);background:#fffaf0;box-shadow:0 3px 0 #f5e6c0}.sx-stk small{display:block;color:#8a93a8;font-size:12px}.sx-stk b{font-weight:normal;color:#4a5570}
+.actions [hidden]{display:none!important}

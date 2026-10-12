@@ -5,11 +5,12 @@
 <meta name="description" content="测测你会不会恋爱、什么时候恋爱、恋爱后像哪个角色">
 <link rel="preload" href="fonts/kuaile-sub.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/wenkai-sub.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=1791784718">
-<link rel="stylesheet" href="themes.css?v=1791784718">
-<link rel="stylesheet" href="art.css?v=1791784718">
-<link rel="stylesheet" href="felt.css?v=1791784718">
-<link rel="stylesheet" href="gonglue.css?v=1791784718">
+<link rel="stylesheet" href="style.css?v=1791785194">
+<link rel="stylesheet" href="themes.css?v=1791785194">
+<link rel="stylesheet" href="art.css?v=1791785194">
+<link rel="stylesheet" href="felt.css?v=1791785194">
+<link rel="stylesheet" href="gonglue.css?v=1791785194">
+<link rel="stylesheet" href="series.css?v=1791785194">
 </head><body>
 <div id="app">
   <section id="start" class="page show">
@@ -19,16 +20,16 @@
     <div class="envelope" data-ic="envelope" data-size="110"></div>
     <h1 class="title"><span class="t-a">人间</span><span class="t-b">选择题</span></h1>
     <p class="sub">恋爱时，门后的你会像谁？</p>
-    <p class="pick">两种画风，两种测法，选一个吧</p>
+    <p class="pick">先推开一扇门吧：大门测恋爱，小门有更多玩法</p>
     <button class="mode serious" data-mode="serious"><span class="tape"></span><span class="mi" data-ic="lens" data-t="s" data-size="46"></span><span class="mt"><b>认真分析</b><small>真实场景 · 尽量严谨</small></span></button>
     <button class="mode funny" data-mode="funny"><span class="tape"></span><span class="mi" data-ic="popper" data-t="f" data-size="46"></span><span class="mt"><b>搞怪测一测</b><small>脑洞题目 · 快乐至上</small></span></button>
     <div class="doors">
       <button class="sdoor live" id="doorGl"><span class="sd-ic" data-sv="door"></span><b>攻略模式</b><small>选个 TA</small></button>
-      <button class="sdoor soon" disabled><span class="sd-ic" data-sv="hwin"></span><b>爱情观</b><small>敬请期待</small></button>
-      <button class="sdoor soon" disabled><span class="sd-ic" data-sv="house"></span><b>生活</b><small>敬请期待</small></button>
-      <button class="sdoor soon" disabled><span class="sd-ic" data-sv="clock"></span><b>工作</b><small>敬请期待</small></button>
+      <button class="sdoor soon" data-sx="love" disabled><span class="sd-ic" data-sv="hwin"></span><b>爱情观</b><small>敬请期待</small></button>
+      <button class="sdoor soon" data-sx="life" disabled><span class="sd-ic" data-sv="house"></span><b>生活</b><small>敬请期待</small></button>
+      <button class="sdoor soon" data-sx="work" disabled><span class="sd-ic" data-sv="clock"></span><b>工作</b><small>敬请期待</small></button>
     </div>
-    <p class="tiny">共 10 题 · 约 2 分钟 · 结果仅供娱乐</p>
+    <p class="tiny">每扇门 8–10 题 · 约 2 分钟 · 结果仅供娱乐</p>
     <a id="themeLink" class="theme-link" href="?theme=vangogh"><span data-ic="sunflower" data-t="v" data-size="22"></span><span id="themeText">试试梵高星空版</span></a>
     <button type="button" id="legalToggle" class="legal-toggle">关于本测试（免责与隐私）</button>
     <div id="legalPanel" class="legal-panel hide" hidden>
@@ -94,11 +95,30 @@
     </div>
     <div id="glPrev" class="preview hide"><div class="pv-tip">长按图片，保存到相册</div><div class="polaroid"><img id="glImg" alt="攻略卡"></div><button class="btn close" id="glClose">好啦</button></div>
   </section>
+  <section id="sxQuiz" class="page">
+    <div class="top"><span id="sxChip" class="chip"></span><span id="sxCount" class="count"></span></div>
+    <div class="track"><i id="sxBar"></i></div>
+    <div class="qcard" id="sxQcard"><h2 id="sxQ"></h2><div id="sxOpts"></div></div>
+    <button id="sxBack" class="link">← 上一题</button>
+  </section>
+  <section id="sxResult" class="page">
+    <div id="sxCard" class="card sx-card"></div>
+    <div class="actions">
+      <button id="sxSave" class="btn main">保存结果图</button>
+      <button id="sxPairBtn" class="btn sx-pairbtn" hidden>生成对照链接，发给朋友一起测</button>
+      <button id="sxNext" class="btn" hidden></button>
+      <button id="sxAgain" class="btn">再测一次</button>
+      <button id="sxHome" class="link">回到首页</button>
+    </div>
+    <div id="sxPrev" class="preview hide"><div class="pv-tip">长按图片，保存到相册</div><div class="polaroid"><img id="sxImg" alt="结果图"></div><button class="btn close" id="sxClose">好啦</button></div>
+  </section>
 </div>
-<script src="icons.js?v=1791784718"></script>
-<script src="data.js?v=1791784718"></script>
-<script src="bank.js?v=1791784718"></script>
-<script src="app.js?v=1791784718"></script>
-<script src="gonglue-data.js?v=1791784718"></script>
-<script src="gonglue.js?v=1791784718"></script>
+<script src="icons.js?v=1791785194"></script>
+<script src="data.js?v=1791785194"></script>
+<script src="bank.js?v=1791785194"></script>
+<script src="app.js?v=1791785194"></script>
+<script src="gonglue-data.js?v=1791785194"></script>
+<script src="gonglue.js?v=1791785194"></script>
+<script src="sx-love.js?v=1791785194"></script>
+<script src="series.js?v=1791785194"></script>
 </body></html>
