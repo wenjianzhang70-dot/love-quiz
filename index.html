@@ -5,10 +5,11 @@
 <meta name="description" content="测测你会不会恋爱、什么时候恋爱、恋爱后像哪个角色">
 <link rel="preload" href="fonts/kuaile-sub.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/wenkai-sub.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=1791781107">
-<link rel="stylesheet" href="themes.css?v=1791781107">
-<link rel="stylesheet" href="art.css?v=1791781107">
-<link rel="stylesheet" href="felt.css?v=1791781107">
+<link rel="stylesheet" href="style.css?v=1791784361">
+<link rel="stylesheet" href="themes.css?v=1791784361">
+<link rel="stylesheet" href="art.css?v=1791784361">
+<link rel="stylesheet" href="felt.css?v=1791784361">
+<link rel="stylesheet" href="gonglue.css?v=1791784361">
 </head><body>
 <div id="app">
   <section id="start" class="page show">
@@ -21,6 +22,12 @@
     <p class="pick">两种画风，两种测法，选一个吧</p>
     <button class="mode serious" data-mode="serious"><span class="tape"></span><span class="mi" data-ic="lens" data-t="s" data-size="46"></span><span class="mt"><b>认真分析</b><small>真实场景 · 尽量严谨</small></span></button>
     <button class="mode funny" data-mode="funny"><span class="tape"></span><span class="mi" data-ic="popper" data-t="f" data-size="46"></span><span class="mt"><b>搞怪测一测</b><small>脑洞题目 · 快乐至上</small></span></button>
+    <div class="doors">
+      <button class="sdoor live" id="doorGl"><span class="sd-ic" data-sv="door"></span><b>攻略模式</b><small>选个 TA</small></button>
+      <button class="sdoor soon" disabled><span class="sd-ic" data-sv="hwin"></span><b>爱情观</b><small>敬请期待</small></button>
+      <button class="sdoor soon" disabled><span class="sd-ic" data-sv="house"></span><b>生活</b><small>敬请期待</small></button>
+      <button class="sdoor soon" disabled><span class="sd-ic" data-sv="clock"></span><b>工作</b><small>敬请期待</small></button>
+    </div>
     <p class="tiny">共 10 题 · 约 2 分钟 · 结果仅供娱乐</p>
     <a id="themeLink" class="theme-link" href="?theme=vangogh"><span data-ic="sunflower" data-t="v" data-size="22"></span><span id="themeText">试试梵高星空版</span></a>
     <button type="button" id="legalToggle" class="legal-toggle">关于本测试（免责与隐私）</button>
@@ -46,6 +53,7 @@
     <div class="actions">
       <button id="save" class="btn main"><span id="camIc"></span>保存结果图</button>
       <button id="other" class="btn"></button>
+      <button id="toGl" class="btn gl-entry">想靠近 TA？开攻略</button>
       <button id="again" class="link">重新测一次</button>
     </div>
     <div id="preview" class="preview hide">
@@ -54,9 +62,43 @@
       <button class="btn close" id="closePrev">好啦</button>
     </div>
   </section>
+  <section id="glType" class="page">
+    <div class="gl-top"><button class="link" id="glTypeBack">← 返回</button></div>
+    <h2 class="gl-h">你想靠近谁？</h2><p class="gl-s">选一个对象，看看你们合不合拍（娱乐向）</p>
+    <div class="gl-types">
+      <button class="gl-type t-char" data-type="char"><span data-sv="door"></span><b>角色</b><small>某个人生阶段的 TA</small></button>
+      <button class="gl-type t-mbti" data-type="mbti"><span data-sv="patch"></span><b>MBTI</b><small>16 型，挑一个</small></button>
+      <button class="gl-type t-sign" data-type="sign"><span data-sv="ystar"></span><b>星座</b><small>12 星座</small></button>
+      <button class="gl-type t-xiu" disabled><span data-sv="moon"></span><b>星宿</b><small>第二期上线</small><em>敬请期待</em></button>
+    </div>
+    <p class="tiny">只能选虚构角色或类型标签 · 8 题 · 纯属娱乐</p>
+  </section>
+  <section id="glPick" class="page">
+    <div class="gl-top"><button class="link" id="glPickBack">←</button><b>挑一个 TA</b><span class="chip" id="glPickType"></span></div>
+    <div id="glPool" class="gl-pool"><button class="on" data-pool="serious">认真池</button><button data-pool="funny">搞怪池</button></div>
+    <div id="glList" class="gl-list"></div>
+    <div class="gl-bottom"><button class="btn main" id="glGo" disabled>就 TA 了，开始攻略</button></div>
+  </section>
+  <section id="glQuiz" class="page">
+    <div class="top"><span id="glChip" class="chip"></span><span id="glCount" class="count"></span></div>
+    <div class="track gl-track"><i id="glBar"></i><span class="gl-hearte" data-sv="heart"></span></div>
+    <div class="qcard" id="glQcard"><h2 id="glQ"></h2><div id="glOpts"></div></div>
+    <button id="glBack" class="link">← 上一题</button>
+  </section>
+  <section id="glResult" class="page">
+    <div id="glCard" class="card gl-card"></div>
+    <div class="actions">
+      <button id="glSave" class="btn main">保存攻略卡</button>
+      <button id="glSwap" class="btn">换个对象</button>
+      <button id="glHome" class="link">回到主测</button>
+    </div>
+    <div id="glPrev" class="preview hide"><div class="pv-tip">长按图片，保存到相册</div><div class="polaroid"><img id="glImg" alt="攻略卡"></div><button class="btn close" id="glClose">好啦</button></div>
+  </section>
 </div>
-<script src="icons.js?v=1791781107"></script>
-<script src="data.js?v=1791781107"></script>
-<script src="bank.js?v=1791781107"></script>
-<script src="app.js?v=1791781107"></script>
+<script src="icons.js?v=1791784361"></script>
+<script src="data.js?v=1791784361"></script>
+<script src="bank.js?v=1791784361"></script>
+<script src="app.js?v=1791784361"></script>
+<script src="gonglue-data.js?v=1791784361"></script>
+<script src="gonglue.js?v=1791784361"></script>
 </body></html>
