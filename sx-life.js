@@ -98,7 +98,7 @@ function day(r){var hi=function(k){return r[k]>=.5};
   ['18:30',hi('L')?'一桌人热热闹闹吃晚饭':'给自己煮点喜欢的'],
   [hi('P')?'22:30':'00:30',hi('F')?'洗澡护肤，早点睡':'刷会儿手机，困了就睡']]}
 SX.life={live:true,name:'生活',doorSub:'理想的一天',soft:'#fff6dc',youText:'你的理想日常，像',hook:'晒出你的理想一天，看看朋友的像谁',sec:['你的理想日常','理想的一天','生活小细节'],dims:DL,bank:bank,results:results,
- module:function(r){return {title:'你的理想一天',html:'<ul class="sx-day">'+day(r).map(function(x){return '<li><b>'+x[0]+'</b><span>'+x[1]+'</span></li>'}).join('')+'</ul>'}},
+ module:function(r){return {title:'你的理想一天',html:'<ul class="sx-day">'+day(r).map(function(x){return '<li><b><svg class="sx-ck" viewBox="0 0 20 20" width="14" height="14"><circle cx="10" cy="10" r="8.5" fill="#fff6dc" stroke="#e8c97a" stroke-width="2" stroke-dasharray="2 1.6"/><path d="M10 5.5V10l3 2" fill="none" stroke="#c99a2a" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="10" r="1.2" fill="#c99a2a"/></svg>'+x[0]+'</b><span>'+x[1]+'</span></li>'}).join('')+'</ul>'}},
  extra:function(r,x){return '<div class="sec sxs3"><h4>肆 · 本周小任务</h4>'+x.tasks.map(function(t){return '<p class="li">'+t+'</p>'}).join('')+'</div>'},
  bias:{"forest":0.0407,"sisters":-0.0509,"sophie":-0.1509,"kiki":0.2956,"summer":-0.082,"amelie":-0.3711,"diner":-0.0843,"nest":0.0157}};
 })();

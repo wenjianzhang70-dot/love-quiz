@@ -85,7 +85,7 @@ var DL={R:['浪漫','务实'],D:['亲密','独立'],T:['坦白','含蓄'],K:['�
 function bars(r,r2){return Object.keys(DL).map(function(k){var v=Math.round(r[k]*100),v2=r2?Math.round(r2[k]*100):null;
   return '<div class="sx-sp"><span>'+DL[k][1]+'</span><div class="sx-line"><i style="left:'+v+'%"></i>'+(v2!==null?'<i class="b" style="left:'+v2+'%"></i>':'')+'</div><span>'+DL[k][0]+'</span></div>'}).join('')}
 function code(r){return Object.keys(DL).map(function(k){return Math.min(9,Math.round(r[k]*9))}).join('')}
-SX.love={live:true,name:'爱情观',doorSub:'爱的形状',soft:'#ffe8ee',youText:'你心里的爱，是',hook:'测完生成对照码，发给朋友或 TA 一起比一比',sec:['你心里的爱','爱情观光谱','小小日常'],dims:DL,bank:bank,results:results,
+SX.love={live:true,name:'爱情观',doorSub:'爱的形状',soft:'#ffe8ee',youText:'你心里的爱，是',hook:'发给 TA，看看你们的爱是不是同一个形状',sec:['你心里的爱','爱情观光谱','小小日常'],dims:DL,bank:bank,results:results,
  footX:'，也不判断任何关系的好坏',
  module:function(r){return {title:'爱情观光谱',html:'<div class="sx-spec">'+bars(r)+'</div><p class="sx-note">绒球越靠哪边，越偏那一种。两边都很好，没有对错。</p>'}},
  extra:function(r){var p=W.__sxPair;if(!p)return '';var r2={},ks=Object.keys(DL);ks.forEach(function(k,i){r2[k]=(+p[i])/9});
