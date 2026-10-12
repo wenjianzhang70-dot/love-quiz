@@ -15,7 +15,7 @@ for(const m of ['serious','funny']){const B=BANK[m];const cnt={};B.forEach(q=>cn
  if(new Set(B.map(q=>q.id)).size!==B.length)ok=false;
  B.forEach(q=>q.opts.forEach(o=>{for(const k in o[1])if(o[1][k]<0||o[1][k]>2)ok=false;if(!(q.d in o[1]))(global.PM=global.PM||new Set).add(q.id)}));
  console.log(m,'total',B.length,JSON.stringify(cnt),'groups',new Set(B.map(q=>q.g)).size);
- const fr=run(m,B,m+'[40题样例]',10,500);
+ const fr=run(m,B,m+'[真实题库]',10,500);
  if(fr[0]+fr[1]+fr[2]!==0){ok=false;console.log('repeat within first 3 plays')}
 }
 // 引擎压力测试：模拟最终 100 题库（每维 25 题，40 个场景组）
